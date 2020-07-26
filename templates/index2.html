@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+<title>VID VEDA</title>
+
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/signin.css') }}">
+
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container" >
+
+        <div class="content" >
+
+
+            <div class="container-title">Sign In</div>
+            <form action = "/" method = POST>
+            <div class="input-email">
+        
+                <input class="input" type="email" name = content placeholder="Email" > 
+            </div>
+            <div class="input-pass">
+                <input class="input" type="password" name = content2 placeholder="Password"> 
+            </div>
+            <div class="cntr2">
+                <a class="fp" href = "/forgot" style = "text-decoration: none">Forgot Password?</a>
+                <button class="btn" type="submit" name = submit ><p class="sign">Sign In</p></button>
+                </form>
+            </div>
+            <div class="cntr3">
+                <div class="signuprequest">Don’t have an Account Yet? <span class="signupcolour"> <a href="/signup">Sign Up  </a></span></div>
+            </div>
+
+           
+
+
+           
+
+        </div>
+        
+    </div>
+ 
+    {% for message in get_flashed_messages() %}
+
+    <div class="MsgPopArea">
+        <div class="msgarea">
+            <p>{{ message }} </p>
+
+        </div>
+        <div class="btnarea">
+            <button class="msgbtn"> Ok </button>
+
+        </div>
+        
+    </div>
+    {% endfor %}
+   
+
+      
+
+</main>
+
+<script>
+    const btn = document.querySelector(".msgbtn")
+    btn.addEventListener("click", () => {
+        const msgbox = document.querySelector(".MsgPopArea")
+        msgbox.classList.toggle("msgdisplay")
+    })
+</script>
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+

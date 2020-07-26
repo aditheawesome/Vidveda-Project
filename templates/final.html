@@ -1,0 +1,51 @@
+{% extends "dashboard.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/userdashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<main>
+
+
+    <div class="headingcontainer">
+        <h1>Welcome {{name}}!</h1>
+        <p>How are you feeling today?</p>
+    </div>
+    
+    <div class="callcontainer">
+        <form action = "/" method = POST>
+       <button type = "submit" name = "logout3" id="logout3" value = "logout3" class="btn"><div class="callbutton"><svg width="87" height="87" viewBox="0 0 87 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="43.5" cy="43.5" r="43" stroke="#BEBEBE"/>
+            <rect x="24.7354" y="31.7103" width="31.09" height="24.6838" rx="12" fill="#DE5555"/>
+            <path d="M47.7422 44.0522L64.5308 33.3638V54.7406L47.7422 44.0522Z" fill="#DE5555"/>
+            </svg>
+            </div>
+        </button> 
+
+        </form>
+        <div class="calltext">
+        </div>
+    </div>
+    </div>
+    
+    {% for message in get_flashed_messages() %}
+    <p>{{ message }}</p>
+{% endfor %}
+    
+    <div class="helparea">
+       
+    
+    </div>
+    
+
+
+{% endblock content %}
+
+
+
+
+
+

@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Reset Original */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+
+
+}
+/* END */
+
+/* Root Variables */
+:root{
+  --bg-color : white;
+  --theme-color: #DE5555;
+  --text-color: #2b2b2b;
+  --default-black: black;
+  --default-white: white;
+  --hover-color: rgb(56, 56, 56);
+}
+
+
+/* Animation Stopper */
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
+}
+
+
+
+/* Body Settings */
+body{
+  overflow: hidden;
+  background-color: var(--default-white);
+}
+
+/* !---------------------------Navigation Bar Starts -------------------------------------------!*/
+
+/* Navigation Bar Core*/
+
+
+nav{
+  display: flex;
+    width: 100vw;
+    height: 80px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    overflow: hidden;
+
+}
+
+nav .logo{
+  flex: 1;
+    margin-left: 1vw;
+    letter-spacing: 0.43em;
+
+}
+
+
+nav .logo a:hover{
+  color: var(--text-color);
+  transition: .5s;
+}
+
+.logo-text{
+  color: #18931D;
+
+}
+
+nav .logo a{
+  font-size: 2opx;
+  text-decoration: none;
+  color: var(--default-black);
+  margin: 20px;
+}
+
+
+.list{
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  align-content: center;
+  align-items: center;
+}
+
+.listitem a{
+  text-decoration: none;
+  color: var(--text-color);  
+}
+
+
+
+.hamburger{
+  display: none;
+  cursor: pointer;
+  
+}
+
+
+
+
+
+.ham-active{
+opacity: 100%;
+}
+
+.ham-active .ham-line:nth-child(2){
+  opacity: 0 ;
+
+}
+.ham-active .ham-line:nth-child(1){
+  transform: translateY(6px) rotate(45deg);
+}
+.ham-active .ham-line:nth-child(3){
+
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+.ham-line{
+  width:20px;
+  height: 2px;
+  background-color: var(--default-black);
+  margin: 5px;
+  border-radius: 10px;
+  transition: .3s ;
+  display: block;
+
+}
+
+
+.nav-button{
+  color: var(--text-color);
+  background: var(--default-white);
+  border: 1px solid var(--theme-color);
+  box-sizing: border-box;
+  border-radius: 16px;
+  width: 160px;
+  height: 30px;
+  margin: auto;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.nav-button:hover{
+  border: 1px solid var(--hover-color);
+  color: rgb(44, 44, 44);
+
+  
+}
+
+
+/* Navigation Bar Core Ends*/
+
+
+/* Responsive Settings for Nav Bar */
+
+@media screen and (max-width: 786px){
+
+
+    
+  .hamburger{
+    display: block;
+    margin-right: 20px;
+  }
+
+  
+  
+.list{
+    position: absolute;
+    display: flex;
+    top:0;
+    right:0;
+    flex-direction: column;
+    height: 100vh;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    background-color: var(--default-white);
+    width: 50vw;
+    transform: translateX(100%);
+    align-items: center;
+    justify-content: flex-start;
+    transition:  .2s ease-in;
+    visibility: collapse;
+    padding-top: 90px;
+
+  }
+
+  .listitem{
+    margin-top: 50px;
+  }
+
+  .listitem a:hover{
+    color: var(--text-color);  
+  }
+
+
+}
+
+/* Responsive Settings for Nav Bar Ends */
+
+/* List Toggle For Nab Bar */
+
+.list-toggle{
+  visibility: visible;
+
+  transform: translateX(0%);
+  transition: .2s ease-in;
+
+
+
+}
+
+/*List Toogle for Nav Bar ends */
+
+/* !---------------------------Navigation Bar Ends -------------------------------------------!*/
+
+
+/* responsive for main */
+@media screen and (max-width: 786px){
+
+  body{
+    overflow-x: hidden;
+    position: fixed;
+    
+
+  }
+
+
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-image: url("./img/main-bg.svg");
+  background-repeat: no-repeat;
+  background-position: top ;
+  background-size: cover;
+  height: 130px;
+  z-index: -1;
+}
+
+.heading{
+  font-size: 9vw;
+}
+
+
+.container{
+  flex-direction: column;
+  align-items: flex-start; 
+
+}
+
+
+}
+
+
+/* responsive - end*/
+
+
+
+
+
+
+/* Container */
+
+.container{
+display: flex;
+}
+
+.heading-area{
+flex: 2;
+font-family: 'Open Sans', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 4vw;
+
+color: var(--text-color);
+margin-top: 17vh;
+margin-left: 8vw;
+
+}
+
+.heading-text{
+  color: var(--theme-color);
+}
+
+
+.call-button{
+  background-color: var(--theme-color);
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 16px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  margin-top: 30px;
+
+}
+
+
+.call-button:hover{
+  background-color: var(--theme-color);
+}
+
+.image-area{
+  height: 100vh;
+  flex:1;
+  background-image: url("/img/main-bg.svg");
+  background-position: left;
+  background-size: cover;
+
+}

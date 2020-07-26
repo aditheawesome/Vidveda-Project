@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <title>Vid Veda</title>
+</head>
+<body>
+
+<!--Navigation Bar Component-->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#"><span class="logo-text"> V</span>ID VEDA</a>
+    </div>
+<!--Navigation List Component-->
+
+<ul style = "z-index: 1" class="list">
+  <li class="listitem"><button class="nav-button">LogIn/SignUp</button></li>
+  <li class="listitem"><button class="nav-button">Doctor Check In</button></li>
+  <li class="listitem"><a href='/'>Home</a></li>
+  <li class="listitem"><a href='#'>About</a></li>
+  <li class="listitem"><a href='#'>Help</a></li>
+</ul>
+<!--Navigation List Component Ends-->
+
+<!--Hamburger Menu Component-->
+
+<div style = "z-index: 2" class="hamburger" id="hamburger-1">
+  <div class="ham-line"></div>
+  <div class="ham-line"></div>
+  <div class="ham-line"></div>
+</div>
+<!--Hamburger Menu Component  Emds-->
+
+  </nav>
+<!--Navigation Bar Component Ends-->
+      <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+
+
+
+<main>
+
+<div class="container">
+  <div class="heading-area">
+    <div class="heading">
+      <span class="heading-text">Video </span>Consultation with Top Doctors Now !
+    </div>
+    <div class="buttons-area">
+      <button class="call-button">Call Now</button>
+    </div>
+
+
+  </div>
+  <div class="image-area">
+    
+  </div>
+
+</div>
+ 
+
+
+<div class="footer"></div>
+
+</main>
+
+</body>
+</html>

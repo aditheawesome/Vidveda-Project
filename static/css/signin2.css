@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap');
+
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+body{
+font-family: 'Work Sans', sans-serif;
+overflow: hidden;
+width: 100vw;
+position: fixed;
+}
+
+
+   
+
+/* Container */
+
+.container{
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    width: 837px;
+    height: 514px;
+    margin: auto;
+    margin-top: 8vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.content{
+    flex:1.5;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 45px;
+    padding: 20px;
+    position: relative;
+    overflow: scroll;
+}
+
+
+.imgbackground{
+    flex:1;
+    background-image: url("cntr1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover ;
+    border-radius: 0px 13px 13px 0px;
+}
+
+
+.container-title{
+    font-size: 36px;
+}
+
+input{
+    border: 1px solid #817A7A;
+    box-sizing: border-box;
+    border-radius: 13px;
+    width: 346px;
+    height: 45px;
+    margin-top: 50px;
+    outline: none;
+}
+
+input{
+    font-size: 14px;
+    line-height: 19px;
+    color: #817A7A;
+    padding: 10px;
+
+}
+
+
+.cntr2{
+    display: flex;
+    margin-top: 60px;
+    align-items: center;
+}
+
+.fp{
+    flex:1;
+    color: #817A7A;
+    font-size: 14px;
+
+}
+
+.btn{
+    width: 111px;
+    height: 34px;
+    background: #DE5555;
+    border-radius: 13px;
+    border-style: none;
+    margin-right: 110px;
+    outline: none;
+}
+
+.btn:hover{
+    cursor: pointer;
+    color: #DE5555;
+}
+
+.sign{
+    font-size: 14px;
+    color: #FFF1F1;
+}
+
+.cntr3{
+    margin-top: 29px;
+}
+
+.signuprequest{
+
+font-size: 14px;
+color: #000000;
+
+}
+
+.signupcolour{
+    color: #18931D;
+}
+
+
+
+
+
+
+
+/* Media  Queries*/
+@media screen and (max-width: 800px) {
+
+    .imgbackground{
+        display: none;
+    }
+
+    .container{
+        width: 90%;
+        margin: auto;
+        margin-top: 8vh;
+    }
+
+
+
+.input{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.btn{
+    margin-right:10%;
+}
+
+
+.logo{
+    font-size: medium;
+}
+.footer{
+    background-image: url("bg.svg");
+    background-repeat: no-repeat;
+    background-position: top ;
+    background-size: cover;
+  height: 130px;
+  margin-top: 40px;
+}
+
+
+
+
+}

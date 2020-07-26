@@ -1,0 +1,964 @@
+<!--
+<link href= 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap' rel = 'stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+
+
+
+
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    
+    }
+    
+    body{
+    font-family: 'Work Sans', sans-serif;
+    }
+    
+    
+    /* Nav Bar*/
+    
+    nav{
+        display: flex;
+        padding-top: 0px;
+        margin-top: -50px;
+        width: 100vw;
+        height: 12vh;
+        box-shadow: 0px 0.75vh 2vh rgba(0, 0, 0, 0.25);
+        align-items: center;
+    }
+    
+    .logo{
+        flex: 2;
+        margin-left: 3vw;
+        font-size: 3.22vh;
+        letter-spacing: 0.43em;
+    }
+    
+    .logocolour{
+        color: #18931D;
+    }
+    
+    .navul{
+        flex:1;
+        display: flex;
+        text-decoration: none;
+        list-style: none;
+        justify-content: space-around;
+    
+    }
+    
+    .navul a{
+        text-decoration: none;
+        letter-spacing: 0.115em;
+    
+    color: #000000;
+    margin: 10px;
+    
+    }
+       
+    
+    /* Container */
+    
+    .container{
+        background: #FFFFFF;
+        border: 1px solid #E5E5E5;
+        box-sizing: border-box;
+        box-shadow: 0px 0.75px 4vh rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        width: 65.288611544vw;
+        height: 80.503006012vh;
+        margin-left: 17.355694228vw;
+        margin-right: 17.355694228vw;
+        margin-top: 8vh;
+        margin-bottom: 11.496993988vh;
+        position: relative;
+    }
+    
+    
+    .content{
+        flex:1.5;
+        display: flex;
+        flex-direction: column;
+        margin-left: 3vw;
+        margin-top: 3.6vh;
+        padding: 3vh;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    
+    .imgbackground{
+        flex:1;
+        background-image: url("cntr1.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover ;
+        border-radius: 0px 13px 13px 0px;
+    }
+    
+    
+    .container-title{
+        font-size: 36px;
+    }
+    
+    input[type = "text"]{
+        border: 0.08vw solid #817A7A;
+        box-sizing: border-box;
+        border-radius: 1vw;
+        width: 27.088603531vw;
+        height: 3.52308427404vw;
+        margin-top: 2.05vw;
+        outline: none;
+    }
+    input[type = "password"]{
+        border: 1px solid #817A7A;
+        border: 0.08vw solid #817A7A;
+        box-sizing: border-box;
+        border-radius: 1vw;
+        width: 27.088603531vw;
+        height: 3.52308427404vw;
+        margin-top: 2.05vw;
+        outline: none;
+    }
+    input[type = "number"]{
+        border: 0.08vw solid #817A7A;
+        box-sizing: border-box;
+        border-radius: 1vw;
+        width: 27.088603531vw;
+        height: 3.52308427404vw;
+        margin-top: 2.05vw;
+        outline: none;
+    }
+    .input2{
+        border: 1px solid #817A7A;
+        box-sizing: border-box;
+        border-radius: 13px;
+        width: 112px;
+        height: 45px;
+        margin-top: 50px;
+        outline: none;
+    }
+    
+    input[type = "text"]{
+        font-size: 1.1vw;
+        line-height: 19px;
+        color: #817A7A;
+        padding: 0.9vw;
+    
+    }
+    input[type = "password"]{
+        font-size: 1.1vw;
+        line-height: 19px;
+        color: #817A7A;
+        padding: 0.9vw;
+    
+    }
+    input[type = "number"]{
+        font-size: 1.1vw;
+        line-height: 19px;
+        color: #817A7A;
+        padding: 0.9vw;
+    
+    }
+    input[type = 'checkbox']{
+      width: 1.1vw;
+      height: 1.1vw; 
+    }
+    
+    
+    .cntr2{
+        display: flex;
+        margin-top: 60px;
+        align-items: center;
+    }
+    
+    .fp{
+        flex:1;
+        color: black;
+        font-size: 1.1vw;
+    
+    }
+    
+    .btn{
+        width: 111px;
+        height: 34px;
+        background: #DE5555;
+        border-radius: 1vw;
+        border-style: none;
+        margin-right: 8.5vw;
+        outline: none;
+        font-size: 1.1vw
+    }
+    
+    .btn:hover{
+        cursor: pointer;
+        color: #DE5555;
+    }
+    
+    .sign{
+        font-size: 14px;
+        color: #FFF1F1;
+    }
+    
+    .cntr3{
+        margin-top: 29px;
+    }
+    
+    .signuprequest{
+    
+    font-size: 1.1vw;
+    color: #000000;
+    
+    }
+    
+    .signupcolour{
+        color: #18931D;
+    }
+    
+    
+    
+    
+    
+    
+    
+    /* Media  Queries*/
+    @media screen and (max-width: 800px) {
+    
+        .imgbackground{
+            display: none;
+        }
+    
+        .container{
+            width: 100%;
+            margin: auto;
+            margin-top: 8vh;
+        }
+    
+    
+    
+    .input{
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    
+    .btn{
+        margin-top: 50px;
+    }
+    
+    .logo{
+        font-size: medium;
+    }
+    .footer{
+        background-image: url("bg.svg");
+        background-repeat: no-repeat;
+        background-position: top ;
+        background-size: cover;
+      height: 130px;
+      margin-top: 40px;
+    }
+    
+    
+    
+    
+    }
+    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vid Veda</title>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"> <span class="logocolour">V</span>ID VEDA</div>
+        <ul class="navul">
+          <li><a href="/" style = "font-size: 2.5vh;">Home</a></li>
+          <li><a  style = "margin-left: 6vh; font-size: 2.5vh; "    href="#">About</a></li>
+          <li><a href="#" style = "margin-left: 6vh; margin-right: 6vh; font-size: 2.5vh;">Help</a></li>
+        </ul>   
+
+
+    </nav>
+    
+
+    <div class="container">
+
+        <div class="content">
+            <div class="container-title" style = "font-size: 5vh;">Registration</div>
+            <div class="input-email">
+                <form action="/" method="POST"> 
+                <input class="input" name="content3" id="content3"type="text" type="email" placeholder="Email" required> <input class="input" name="first_name" id="first_name" type="text" placeholder="First Name" required> 
+            </div>
+            <div class="input-pass">
+                <input class="input" name="content4" id="content4" type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,24}" title = "Password must be between 8 and 24 characters long and include at least one lower case letter, one uppercase letter, and one number."" required> <input class="input" name="middle_name" id="middle_name" type="text" placeholder="Middle Name(s)">
+            </div>
+            <div class="input-pass">
+              <input class="input" name="content5" id="content5" type="password" placeholder="Re-enter Password" required> <input class="input" name="last_name" id="last_name" type="text" placeholder="Last Name" required>
+            </div>
+            <div class="cntr2" style = "margin-top: 2.3vw">
+              <div class="fp" ><input type = "checkbox" style = "margin-right: 0.4vw;" required>I agree to the terms and regulations. </div>
+                <button type = "submit" name = "submit2" id="submit2" value = "submit2" class="btn" style = "color: white; margin-right: 27.25vw; width: 18vh;height: 6vh;" height:20px>Sign Up</button>
+                </form>
+            </div>
+            <div class="cntr3" style = "margin-top: 1vw">
+                <div class="signuprequest">Do you already have an account? <a href = "/login"  class="signupcolour"> Sign In </a></div>
+            </div>
+            <div class="cntr3" style = "margin-top: 1.5vw">
+                <div class="signuprequest">Are you a doctor? <a href = "/dctrsignup"  class="signupcolour"> Doctor Signup </a></div>
+            </div>
+            <br>
+            <body style = "margin-top: 50px;">
+              <div style = "margin-top: 10px; font-size: 14px; color: black">
+                {% for message in get_flashed_messages() %}
+                    <p >{{ message }}</p>
+                {% endfor %}
+              </div>
+        </div>
+        <div class="imgbackground">
+        </div>
+    </div>
+
+
+   <div class="footer">
+   </div>
+    
+</body>
+</html>
+-->
+<!---
+<link href= 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap' rel = 'stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+
+
+
+
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    
+    }
+    
+    body{
+    font-family: 'Work Sans', sans-serif;
+    }
+    
+    
+    /* Nav Bar*/
+    
+    nav{
+        display: flex;
+        padding-top: 0px;
+        margin-top: 0px;
+        width: 100vw;
+        height: 12vh;
+        box-shadow: 0px 0.75vh 2vh rgba(0, 0, 0, 0.25);
+        align-items: center;
+    }
+    
+    .logo{
+        flex: 2;
+        margin-left: 3vw;
+        font-size: 3.22vh;
+        letter-spacing: 0.43em;
+    }
+    
+    .logocolour{
+        color: #18931D;
+    }
+    
+    .navul{
+        flex:1;
+        display: flex;
+        text-decoration: none;
+        list-style: none;
+        justify-content: space-around;
+    
+    }
+    
+    .navul a{
+        text-decoration: none;
+        letter-spacing: 0.115em;
+    
+    color: #000000;
+    margin: 10px;
+    
+    }
+       
+    
+    /* Container */
+    
+    .container{
+        background: #FFFFFF;
+        border: 1px solid #E5E5E5;
+        box-sizing: border-box;
+        box-shadow: 0px 0.75px 4vh rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        width: 65.288611544vw;
+        height: 80.503006012vh;
+        margin-left: 17.355694228vw;
+        margin-right: 17.355694228vw;
+        margin-top: 8vh;
+        margin-bottom: 11.496993988vh;
+        display: flex;
+        position: relative;
+    }
+    
+    
+    .content{
+        flex:1.5;
+        display: flex;
+        flex-direction: column;
+        margin-left: 3vw;
+        margin-top: 3.6vh;
+        padding: 3vh;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    
+    .imgbackground{
+        flex:1;
+        background-image: url("cntr1.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover ;
+        border-radius: 0px 13px 13px 0px;
+    }
+    
+    
+    .container-title{
+        font-size: 36px;
+    }
+    
+    input{
+        border: 0.08vw solid #817A7A;
+        box-sizing: border-box;
+        border-radius: 1vw;
+        width: 27.088603531vw;
+        height: 3.52308427404vw;
+        margin-top: 4.05vw;
+        outline: none;
+    }
+    
+    input{
+        font-size: 1.1vw;
+        line-height: 19px;
+        color: #817A7A;
+        padding: 0.9vw;
+    
+    }
+    
+    
+    .cntr2{
+        display: flex;
+        margin-top: 4.6vw;
+        align-items: center;
+    }
+    
+    .fp{
+        flex:1;
+        color: #817A7A;
+        font-size: 1.1vw;
+    
+    }
+    
+    .btn{
+        width: 111px;
+        height: 34px;
+        background: #DE5555;
+        border-radius: 1vw;
+        border-style: none;
+        margin-right: 8.5vw;
+        outline: none;
+        font-size: 1.1vw
+    }
+    
+    .btn:hover{
+        cursor: pointer;
+        color: #DE5555;
+    }
+    
+    .sign{
+        font-size: 14px;
+        color: #FFF1F1;
+    }
+    
+    .cntr3{
+        margin-top: 2.5vw;
+    }
+    
+    .signuprequest{
+    
+    font-size: 1.1vw;
+    color: #000000;
+    
+    }
+    
+    .signupcolour{
+        color: #18931D;
+    }
+    
+    
+    
+    
+    
+    
+    
+    /* Media  Queries*/
+    @media screen and (max-width: 800px) {
+    
+        .imgbackground{
+            display: none;
+        }
+    
+        .container{
+            width: 100%;
+            margin: auto;
+            margin-top: 8vh;
+        }
+    
+    
+    
+    .input{
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    
+    .btn{
+        margin-top: 50px;
+    }
+    
+    .logo{
+        font-size: medium;
+    }
+    .footer{
+        background-image: url("bg.svg");
+        background-repeat: no-repeat;
+        background-position: top ;
+        background-size: cover;
+      height: 130px;
+      margin-top: 40px;
+    }
+    
+    
+    
+    
+    }
+    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vid Veda</title>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"> <span class="logocolour">V</span>ID VEDA</div>
+        <ul class="navul">
+            <li><a href="/" style = "font-size: 2.5vh;">Home</a></li>
+            <li><a  style = "margin-left: 6vh; font-size: 2.5vh; "    href="#">About</a></li>
+            <li><a href="#" style = "margin-left: 6vh; margin-right: 6vh; font-size: 2.5vh;">Help</a></li>
+        </ul>   
+
+
+    </nav>
+    
+
+    <div class="container">
+
+        <div class="content">
+            <div class="container-title" style = "font-size: 5vh;">Sign In</div>
+            <div class="input-email">
+                <form action="/" method="POST"> 
+                <input class="input" name="content" id="content"type="text" type="email" placeholder="Email" required> 
+            </div>
+            <div class="input-pass">
+                <input class="input" name="content2" id="content2" type="password" placeholder="Password" required> 
+            </div>
+            <div class="cntr2">
+                <div class="fp"><a href = "/forgot" style = "color: #817A7A; text-decoration: none;">Forgot Password?</a></div>
+                <button type = "submit" name = "submit" id="submit" value = "submit" class="btn" style = "color: white; width: 18vh;height: 6vh;">Sign In</button>
+                </form>
+            </div>
+            <div class="cntr3">
+                <div class="signuprequest">Don’t have an Account Yet? <a href = "/signup"  class="signupcolour"> Sign Up </a></div>
+            </div>
+            <br>
+            <div style = "margin-top: 0.9px; font-size: 1.1vw; color: black">
+                {% for message in get_flashed_messages() %}
+                    <p >{{ message }}</p>
+                {% endfor %}
+              </div>
+        </div>
+        <div class="imgbackground">
+        </div>
+    </div>
+
+
+   <div class="footer">
+   </div>
+    
+</body>
+</html>
+-->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap');
+
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+body{
+font-family: 'Work Sans', sans-serif;
+}
+
+
+/* Nav Bar*/
+
+nav{
+    display: flex;
+    width: 100vw;
+    height: 80px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    align-items: center;
+}
+
+.logo{
+    flex: 2;
+    margin-left: 3vw;
+    font-size: 24px;
+    letter-spacing: 0.43em;
+}
+
+.logocolour{
+    color: #18931D;
+}
+
+.navul{
+    flex:1;
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    justify-content: space-around;
+
+}
+
+.navul a{
+    text-decoration: none;
+    letter-spacing: 0.115em;
+
+color: #000000;
+margin: 10px;
+
+}
+   
+
+/* Container */
+
+.container{
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    width: 837px;
+    height: 900px;
+    margin: auto;
+    margin-top: 8vh;
+    display: flex;
+    position: relative;
+}
+
+
+.content{
+    flex:1.5;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 45px;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.imgbackground{
+    flex:1;
+    background-image: url("cntr1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover ;
+    border-radius: 0px 13px 13px 0px;
+}
+
+
+.container-title{
+    font-size: 36px;
+}
+
+a{
+    text-decoration: none;
+}
+
+input{
+    border: 1px solid #817A7A;
+    box-sizing: border-box;
+    border-radius: 13px;
+    width: 346px;
+    height: 45px;
+    margin-top: 50px;
+    outline: none;
+}
+
+input{
+    font-size: 14px;
+    line-height: 19px;
+    color: #817A7A;
+    padding: 10px;
+
+}
+
+
+.cntr2{
+    display: flex;
+    margin-top: 60px;
+    align-items: center;
+}
+
+.fp{
+    flex:1;
+    color: #817A7A;
+    font-size: 14px;
+
+}
+
+.btn{
+    width: 111px;
+    height: 34px;
+    background: #DE5555;
+    border-radius: 13px;
+    border-style: none;
+    margin-right: 110px;
+    outline: none;
+}
+
+.btn:hover{
+    cursor: pointer;
+    color: #DE5555;
+}
+
+.sign{
+    font-size: 14px;
+    color: #FFF1F1;
+}
+
+.cntr3{
+    margin-top: 29px;
+}
+
+.signuprequest{
+
+font-size: 14px;
+color: #000000;
+
+}
+
+.signupcolour{
+    color: #18931D;
+}
+
+
+
+
+
+
+
+/* Media  Queries*/
+@media screen and (max-width: 800px) {
+
+    .imgbackground{
+        display: none;
+    }
+
+    .container{
+        width: 90%;
+        margin: auto;
+        margin-top: 8vh;
+    }
+
+
+
+.input{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.btn{
+    margin-right:10%;
+}
+
+.logo{
+    font-size: medium;
+}
+.footer{
+    background-image: url("bg.svg");
+    background-repeat: no-repeat;
+    background-position: top ;
+    background-size: cover;
+  height: 130px;
+  margin-top: 40px;
+}
+
+
+
+
+}
+
+</style>
+<script>
+const burger = document.querySelector('.hamburger');
+const list = document.querySelector('.list');
+const main = document.querySelector('main');
+
+
+burger.addEventListener("click", () => {
+    list.classList.toggle("list-toggle");
+    burger.classList.toggle("ham-active");
+
+
+})
+
+
+
+
+main.addEventListener("click", function change() {
+
+    
+        list.classList.remove("list-toggle");
+        burger.classList.remove("ham-active");
+
+
+    
+})
+
+
+let resizeTimer;
+window.addEventListener("resize", () => {
+  document.body.classList.add("resize-animation-stopper");
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    document.body.classList.remove("resize-animation-stopper");
+  }, 400);
+});
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vid Veda</title>
+</head>
+<body>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <!--Navigation Bar Component-->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#"><span class="logo-text"> V</span>ID VEDA</a>
+    </div>
+<!--Navigation List Component-->
+
+<ul class="list" style = "z-index: 1" >
+<form method  = "POST" action = "/">
+  <li class="listitem"><button class="nav-button" name = kii value = kii>LogIn/SignUp</button></li>
+  </form>
+  <form method  = "POST" action = "/">
+  <li class="listitem"><button class="nav-button" name = check value = check>Doctor Check In</button></li>
+  </form>
+  <li class="listitem"><a href='/'>Home</a></li>
+  <li class="listitem"><a href='#'>About</a></li>
+  <li class="listitem"><a href='#'>Help</a></li>
+</ul>
+<!--Navigation List Component Ends-->
+
+<!--Hamburger Menu Component-->
+
+<div class="hamburger" id="hamburger-1" style = "z-index: 2" >
+  <div class="ham-line"></div>
+  <div class="ham-line"></div>
+  <div class="ham-line"></div>
+</div>
+<!--Hamburger Menu Component  Emds-->
+
+  </nav>
+<!--Navigation Bar Component Ends-->
+<script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+    
+
+    <div class="container">
+        <div class="content">
+            
+            <div class="container-title">Sign In</div>
+            <div class="input-email">
+        <form action="/" method="POST"> 
+                    <input class="input" name="content" id="content"type="text" type="email" placeholder="Email" required> 
+                </div>
+                <div class="input-pass">
+                    <input class="input" name="content2" id="content2" type="password" placeholder="Password" required> 
+                </div>
+                <div class="input-pass">
+                    <input class="input" name="content2" id="content2" type="password" placeholder="Password" required> 
+                </div>
+                <div class="input-pass">
+                    <input class="input" name="content2" id="content2" type="password" placeholder="Password" required> 
+                </div>
+                <div class="input-pass">
+                    <input class="input" name="content2" id="content2" type="password" placeholder="Password" required> 
+                </div>
+                <div class="input-pass">
+                    <input class="input" name="content2" id="content2" type="password" placeholder="Password" required> 
+                </div>
+            <div class="cntr2">
+                <a class="fp" href = "/forgot">Forget Password?</a>
+                <button class="btn" type="button"  name = "submit" id = "submit"><p class="sign">Sign In</p></button>
+            </div>
+            <div class="cntr3">
+                <div class="signuprequest">Don’t have an Account Yet? <a class="signupcolour" href = "/signup"> Sign Up </a></div>
+            </div>
+
+        </div>
+        <div class="imgbackground">
+        </div>
+    </div>
+
+
+   <div class="footer">
+   </div>
+    
+</body>
+</html>

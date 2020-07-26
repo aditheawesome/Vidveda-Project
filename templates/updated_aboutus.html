@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+<title>VID VEDA | About</title>
+
+{% endblock %}
+
+
+
+{% block styles %}
+<link rel="stylesheet" href= "{{ url_for('static',filename='css/aboutus.css') }}">
+
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="headingarea">
+    <h1>About Us</h1>
+</div>
+
+<div class="main">
+    
+   
+
+    <div class="AboutUsTextArea">
+       
+       
+        <p>VidVeda is an online service for getting the best medical advice at the convenience of home. Our vision is to make healthcare affordable and accessible to everyone. </p>
+          <br>  <p>As per the Commonwealth Health data, the ratio of Doctors to Patients in India is 1:10,000. Over 65% of the population has to travel over 5 miles to get to the Doctor, While the internet and cellular services grew tenfold in the last 10 years, and are available in rural areas of India, healthcare is still the least accessible service in India.</p>
+           <br> <p> With VidVeda our goal is to provide healthcare in the most simplistic way ever. It's a no-nonsense approach. You sign-in and request a video call. We aren’t selling you anything else. Our key differentiation is our focus on online video call and Doctor’s availability to take the call within 10 min of the request.</p>
+           <br> <p> It's Uber for Healthcare, we ping a Doctors available at a given request to provide seamless and immediate service to the patient. Unlike long waits in hospitals, driving or cycling multiple miles to reach a doctor, VidVeda will provide you Doctor real-time without having to leave your house. We believe it will change how healthcare is done in India and other developing countries.</p>
+    </div>
+    <div class="TeamDetailsArea">
+        <h1>Meet The Team</h1>
+        <div class="TeamContainer">
+            <div class="HeadArea">
+                <img  src="{{ url_for('static', filename='img/ayati.png') }}" alt="Ayati, Vidveda.com">
+                <h2>Ayati Jend</h2>
+            </div>
+            <div class="AboutTeamArea">
+                <p>            Ayati has a passion for design and graphics. She spends hours analyzing the minute differences between Clementine Orange and Tangerine Orange. She has made VidVeda’s design team think outside the box and achieve functionality with a minimalist. She is a very detailed oriented and smart marketer. Along with her full-time commitment to understanding customers, their needs, and ideate new campaigns, she is pursuing her education.
+                </p>
+            </div>
+        </div>
+
+        <div class="TeamContainer">
+            <div class="HeadArea">
+                <img src="{{ url_for('static', filename='img/circle-cropped.png') }}" alt="Aditya Mittal, Vidveda.com">
+                <h2>Aditya (Adi) Mittal </h2>
+            </div>
+            <div class="AboutTeamArea">
+              <p>  Adi is the VidVeda head of web engineering. Adi spent numerous days and nights to make this website work and be user friendly. He is passionate about coding and designing websites. He learns new things well, and can quickly use them without any struggles. When he starts something he is relentless until he reaches his goal. A few words to describe him: Smart, down to earth, and straight to the point. He is open to feedback, and will always correct himself when he needs to.
+            </p>
+            </div>
+        </div>
+
+        <div class="TeamContainer">
+            <div class="HeadArea">
+                <img src="{{ url_for('static', filename='img/anirudh.png') }}" alt="Anirudh Singh, Vidveda.com">
+                <h2>Anirudh Singh </h2>
+            </div>
+            <div class="AboutTeamArea">
+            <p>   Anirudh is a dynamic and Enthusiastic person. He's a keen observer and quick learner. He's also got a knack for Poetry and Always tries to pour out different and thought-provoking ideas from his dramatic imagination into his scribbled rugged notebook. He actively explores different marketing strategies and if you are a shark conservation supporter like him, He'll be always up for conversations about them. 
+                He's currently pursuing his Undergrad Degree of Bachelor's in Technology from KIET, Ghaziabad India.
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+{% endblock content %}

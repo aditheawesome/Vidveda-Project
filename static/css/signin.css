@@ -1,0 +1,170 @@
+
+   
+
+/* Container */
+
+.container{
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    width: 50vw;
+    height: 514px;
+    margin: auto;
+    margin-top: 8vh;
+    display: flex;
+    overflow: hidden;
+}
+
+
+.content{
+    
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 45px;
+    padding: 20px;
+    overflow: hidden;
+    overflow: hidden;
+}
+
+
+
+
+
+.container-title{
+    font-size: 36px;
+}
+
+input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #817A7A;
+    box-sizing: border-box;
+    width: 90%;
+    height: 45px;
+    margin-top: 50px;
+    outline: none;
+}
+
+.input:focus{
+    border-bottom: 2px solid var(--theme-color);
+}
+
+input{
+    font-size: 20px;
+    line-height: 19px;
+    color: #817A7A;
+    padding: 10px;
+
+}
+input::placeholder{
+    font-size: 14px;
+    line-height: 19px;
+    color: #817A7A;
+    padding: 10px;
+
+}
+
+
+
+
+.cntr2{
+    display: flex;
+    margin-top: 60px;
+    align-items: center;
+}
+
+.fp{
+    flex:1;
+    color: #817A7A;
+    font-size: 14px;
+
+}
+
+.btn{
+    width: 111px;
+    height: 34px;
+    background: #DE5555;
+    border-radius: 13px;
+    border-style: none;
+    margin-right: 10%;
+    outline: none;
+}
+
+.btn:hover{
+    cursor: pointer;
+    color: #DE5555;
+}
+
+.sign{
+    font-size: 14px;
+    color: #FFF1F1;
+}
+
+.cntr3{
+    margin-top: 29px;
+}
+
+.cntr3 a{
+    color: #18931D;
+}
+
+.signuprequest{
+
+font-size: 14px;
+color: #000000;
+
+}
+
+.signupcolour{
+    color: #18931D;
+}
+
+
+
+
+
+a{
+   color: #18931D;
+   text-decoration: none;
+}
+
+/* Media  Queries*/
+@media screen and (max-width: 800px) {
+
+    .imgbackground{
+        display: none;
+    }
+
+    .container{
+        width: 90%;
+        margin: auto;
+        margin-top: 8vh;
+    }
+
+
+
+.input{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.btn{
+    margin-right:10%;
+}
+
+
+.logo{
+    font-size: medium;
+}
+
+
+
+
+
+}

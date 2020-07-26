@@ -1,0 +1,185 @@
+:root {
+    --bg-color: white;
+    --theme-color: #DE5555;
+    --text-color: #2b2b2b;
+    --default-black: black;
+    --default-white: white;
+    --hover-color: rgb(56, 56, 56);
+  }
+  
+  .formbox {
+    width: 90vw;
+    margin: auto;
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-radius: 15px;
+    height: 80vh;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    min-height: 400px;
+    padding: 30px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    -webkit-box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+  }
+  
+  .formbox form {
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  .formbox form label {
+    display: none;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #6d6d6d;
+  }
+  
+  .formbox form input {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #b8b8b8;
+    padding-bottom: 10px;
+    color: black;
+    font-size: 20px;
+    background-color: none;
+  }
+  
+  .formbox form input::-webkit-input-placeholder {
+    font-size: 16px;
+  }
+  
+  .formbox form input:-ms-input-placeholder {
+    font-size: 16px;
+  }
+  
+  .formbox form input::-ms-input-placeholder {
+    font-size: 16px;
+  }
+  
+  .formbox form input::placeholder {
+    font-size: 16px;
+  }
+  
+  .formbox form input:focus {
+    border-bottom: 2px solid;
+    border-color: var(--theme-color);
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+  }
+  
+  .formbox form input:focus::-webkit-input-placeholder {
+    position: relative;
+    margin-left: 30px;
+    display: none;
+  }
+  
+  .formbox form input:focus:-ms-input-placeholder {
+    position: relative;
+    margin-left: 30px;
+    display: none;
+  }
+  
+  .formbox form input:focus::-ms-input-placeholder {
+    position: relative;
+    margin-left: 30px;
+    display: none;
+  }
+  
+  .formbox form input:focus::placeholder {
+    position: relative;
+    margin-left: 30px;
+    display: none;
+  }
+  
+  .formbox form button {
+    width: 120px;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: var(--theme-color);
+    color: white;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    cursor: pointer;
+  }
+  
+  .middlenameblock{
+      display: none;
+  }
+
+
+  .formbox form button:hover {
+    opacity: 80%;
+  }
+  
+  .formheading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .formheading h1 {
+    font-weight: normal;
+  }
+  
+  .formheading h4 {
+    color: var(--hover-color);
+    margin-top: 10px;
+    font-weight: normal;
+  }
+  
+  .otheroptions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .otheroptions a {
+    color: #1ac528;
+    margin-left: 10px;
+  }
+  
+  @media screen and (min-width: 786px) {
+    .formbox {
+      width: 40vw;
+      margin-top: 40px;
+    }
+    .formheading {
+      text-align: center;
+    }
+  }
+  
+  @media screen and (max-width: 786px) {
+    .formbox {
+      -webkit-box-shadow: none;
+              box-shadow: none;
+    }
+  }
+  /*# sourceMappingURL=signup.css.map */

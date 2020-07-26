@@ -1,0 +1,17 @@
+{% extends "dashboard.html" %}
+
+{% block title %}
+
+<title>VID VEDA</title>
+
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/signin.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<body><div id="otEmbedContainer" style="width:98vw; height:80vh; margin-left: 1vw; margin-right: 1vw"></div> <script src="https://tokbox.com/embed/embed/ot-embed.js?embedId=b0ffcc92-db39-4885-b4de-b3cf09305842&room={{plz}}"></script></body>
+
+{% endblock content %}

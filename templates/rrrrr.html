@@ -1,0 +1,47 @@
+
+
+{% extends "layout.html" %}
+
+{% block title %}
+
+<title>VID VEDA</title>
+
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/signin.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container" style = "overflow: hidden">
+
+        <div class="content" style = "overflow: hidden">
+            <div class="container-title">Reset Password</div>
+                     <form action = "/" method = POST>
+            <div class="input-email">
+                <input class="input" type="password" name = ssss placeholder="Email" > 
+            </div>
+            <div class="input-pass">
+                <input class="input" type="password" name = contentss placeholder="Password"> 
+            </div>
+            <div class="cntr2">
+                <button class="btn" type="submit" name = reset2 ><p class="sign">Reset</p></button>
+            </div>
+            </form>
+            <div class="cntr3">
+
+                {% for message in get_flashed_messages() %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+
+            </div>
+
+        </div>
+        <div class="imgbackground">
+            <img height  = 600px src = "{{ url_for('static', filename='img/cntr1.jpg') }}">
+        </div>
+        
+    </div>
+
+{% endblock content %}

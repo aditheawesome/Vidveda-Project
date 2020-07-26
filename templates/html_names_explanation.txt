@@ -1,0 +1,35 @@
+aboutus.html - About Us Page
+
+checkin.html - Checkin Page
+
+checkin2.html - Uselessinde
+
+checko.html - Page after Check in
+
+dctrsignup.html - Doctor Signup
+
+doctorlogin.html - Useless
+
+ef.html - Ueless
+
+final.html - Final Page
+
+forgot.html - Forgot Password Page
+
+hope.html - Vidcall page
+
+index.html - Home Page
+
+index2.html - Login Page
+
+index3.html- Useless
+
+index5.html - Useless
+
+login.html - Useless
+
+rrrrr.html - Password Reset Page
+
+sigmup.html - Sign Up Page
+
+yeet.html - Useless

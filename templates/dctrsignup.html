@@ -1,0 +1,80 @@
+
+
+{% extends "layout.html" %}
+
+{% block title %}
+
+<title>VID VEDA | Doctor Sign Up</title>
+
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/user_signup.css') }}">
+<style>
+   .cntr3 a{
+       color: green;
+   }
+</style>
+
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="formbox">
+        <div class="formheading">
+            <h1>Doctor - Registration</h1>
+            <h4>Please enter your details</h3>
+        </div>
+            <form action = "/" method = "POST" >                   
+                <input class="input" type="text" placeholder="First Name" id = "first_name2" name = "first_name2" place_holder = "First Name" required> 
+                  <div class="middlenameblock">
+                    <input class="input" type="text" placeholder="Middle Name" id = "middle_name2" name = "middle_name2" > 
+
+                  </div>
+                  
+                    <input class="input" type="text" placeholder="Last Name" id = "last_name2" name = "last_name2" place_holder = "Last Name" required> 
+                    <input class="input" type="number" placeholder="Phone Num with Country Code" id = phone_number name = "phone_number" place_holder = "Phone Num with Country COde" required> 
+                    <input class="input" type="email" placeholder="Email" id = "content9" name = "content9" place_holder = "Email" required> 
+                    <input class="input" type="password" placeholder="Password" id ="content6" name = content6 place_holder = "Password" required> 
+                    <input class="input" type="password" placeholder="Re Enter Password" id = content7 name = content7 place_holder = "Re Enter Password" required> 
+                  
+
+                    <input class="input" type="password" placeholder="Secret Key" id = secret_key name = secret_key place_holder = "Secret Key" required> 
+                    
+
+                <div class="cntr2">
+                    <button class="btn" type="submit" name = docsubmit2 id = docsubmit2 ><p class="sign">Sign Up</p></button>
+                </div>
+                <div class="cntr3">
+                    <div class="signuprequest">Already have an Account? <span class="signupcolour"><a href="/checkin"> Check In </a>  </span></div>
+                </div>
+            </div>
+            
+        </form>
+       
+    </div>
+
+    
+    {% for message in get_flashed_messages() %}
+
+    <div class="MsgPopArea">
+        <div class="msgarea">
+            <p>{{ message }} </p>
+
+        </div>
+        <div class="btnarea">
+            <button class="msgbtn"> Ok </button>
+
+        </div>
+        
+    </div>
+    {% endfor %}
+
+    </main>
+
+{% endblock content %}
+
+
+
+
+</html>

@@ -1,0 +1,419 @@
+a{
+    text-decoration: none;
+}
+
+
+
+.call-button{
+    background-color: transparent;
+    border-style: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    outline: none;
+
+    
+}
+
+.LandingContainer{
+    min-height: 600px;
+    position: static;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.LandingHeading{
+    width: 70%;
+    font-size: 4vw;
+    text-align: center;
+    color: rgb(73, 73, 73);
+
+}
+
+
+.LandingHeadingText{
+    color:   var(--theme-color);
+}
+
+
+.LandingSubheading{
+    color: rgb(102, 102, 102);
+    font-size: 1.5vw;
+    width: 70vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 1vw;
+    text-align: center;  
+    
+}
+
+@keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}  
+
+.textgradient{
+    background-image: linear-gradient(92deg, #26f3c7, #2fbb13);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; 
+	-webkit-text-fill-color: transparent;
+	animation: hue 10s infinite linear;
+}
+
+
+
+
+
+.Landingbutton{
+    margin-top: 5vw ;
+    width: 190px;
+    height: 50px;
+    background: var(--theme-color);
+    border-radius: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: white;
+    font-size: 18px;
+}
+
+
+
+
+.Landingbutton:hover{
+   
+        transform: scale(1.03);
+        transition: .2s ease;
+        opacity: 90%;
+    
+}
+
+
+@media screen and (max-width: 786px) {
+
+
+
+    .LandingContainer{
+        margin-bottom: 140px;
+    }
+
+.LandingHeading{
+    width: 97vw;
+    font-size: 10vw;
+    }
+
+
+.LandingSubheading{
+    width: 90vw;
+    font-size: 18px;
+    margin-top: 5vw;
+}
+
+
+.Landingbutton{
+    margin-top: 10vw;
+    width: 180px;
+    font-size: 13px;
+    height: 40px;
+}
+
+
+
+}
+
+
+
+/*Steps Area */
+
+
+.StepsContainer{
+    display: flex;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+
+.StepsArea{
+    flex: 2;
+}
+
+.StepsImageArea{
+    flex:1;
+}
+
+.StepsImageArea svg{
+    width: 30vw;
+
+}
+
+
+
+
+
+
+
+
+
+.StepsHeading h1{
+    color: #373737;
+    font-size: 3vw;
+    
+}
+
+
+.StepsContent{
+    margin-top: 50px;
+}
+
+.StepsContent h3{
+    /* color: #3477DC; */
+    color: #0d704f;
+    font-size: 25px;
+    margin-top: 40px;
+}
+
+.StepsContent p{
+    margin-top: 15px;
+    color: rgb(102, 102, 102);
+    font-size: 18px;
+}
+
+.StepsContent p:hover{
+color: rgb(129, 129, 129);
+transition: .5s ease-in-out;
+}
+
+
+@media screen and (max-width: 786px) {
+    .StepsContainer{
+        width: 95vw;
+        flex-direction: column;
+    }
+
+
+    .StepsContent{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+
+    .StepsArea{
+        flex: 4;
+    }
+
+    .StepsHeading h1{
+        font-size: 7vw;
+        font-weight: 100;
+        text-align: center;
+        color: rgb(102, 102, 102);
+
+    }
+
+    .StepsImageArea svg{
+        flex: 1;
+        width: 60vw;
+        height: 50vh;
+        
+    
+    }
+
+
+    .StepsContent p{
+        text-align: center;
+    }
+
+    .StepsImageArea{
+        display: flex;
+        justify-content: center;
+    }
+
+
+
+
+
+
+
+}
+
+
+.newsletter{
+    width: 100vw;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.newsletterbox{
+    height: 200px;
+    width: max-content;
+    margin: auto;
+    display: flex;
+    height: 326px;
+    background: #FFFFFF;
+    border: 1px solid rgba(32, 49, 59, 0.17);
+    box-sizing: border-box;
+    border-radius: 26px;
+
+
+
+}
+
+
+
+.mainarea{
+    flex:2;
+}
+
+.svgarea{
+    flex:1;
+}
+
+
+.svgarea{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: end;
+
+}
+
+
+.svgarea svg{
+    width: 120px;
+}
+
+
+.newslettercontent{
+  margin-top: 80px;
+  margin-left: 50px;
+
+
+    
+}
+
+
+.newslettercontent h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+.newslettercontent h1 span{
+color: #0d704f;
+}
+
+
+.newslettercontent p{
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+
+.newslettercontent .inputarea input{
+        background: #FFFFFF;
+        border: 1px solid #A5A5A5;
+        border-radius: 19px;
+        width: 40vw;
+        height: 40px;
+        outline: none;
+        padding-left: 30px;
+        font-size: 24px;
+}
+
+
+.inputarea{
+    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+    
+}
+
+
+.inputarea .subscribebutton{
+width: 160px;
+height: 44px;
+color: white;
+
+background: #0d704f;
+border-radius: 26px;
+display: flex;
+align-items: center;
+text-align: center;
+justify-content: space-around;
+margin-left: 30px;
+
+
+}
+
+
+
+
+@media screen and (max-width: 786px) {
+
+
+    .newsletter{
+        margin-bottom: 20vh;
+    }
+
+    .newsletterbox{
+        width: 95vw;
+        flex-direction: column;
+        padding: 30px 20px 30px 20px;
+    }
+
+    .newslettercontent{
+        margin:0;
+
+     
+        
+    }
+
+
+    .newslettercontent h1{
+        font-size: 30px;
+        font-style: bold;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .newslettercontent p{
+        font-size: 16px;
+        text-align: center;
+        font-weight: 500;
+       
+    }
+
+    .inputarea{
+flex-direction: column;    
+}
+
+
+.inputarea .subscribebutton{
+    margin: 0;
+    margin-top: 20px;
+}
+
+
+.newslettercontent .inputarea input{
+    width: 80vw;
+    font-size: 15px;
+}
+
+}

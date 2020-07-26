@@ -1,0 +1,27 @@
+{% extends "dashboard.html" %}
+
+{% block title %}
+
+<title>VID VEDA </title>
+
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/checkedin.css') }}">
+{% endblock %}
+{% block content %}
+<div class="container">
+
+        <div class="content">
+            <div class="title"><h1>Hey, Dr. {{hi}}!</h1></div>
+             <p>We'll text you with the link for the Video Call with your Patient!</p>
+                <p>Remember to check your phone for Text Messages!</p>
+                <form method = "POST" action = "/checkin2/{{bye}}" >
+                <button type = "submit" name = "checkout" id="checkout" value = "checkout" class="btn">Check Out</button>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+{% endblock content %}
+

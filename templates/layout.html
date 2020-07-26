@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="VID VEDA is an online service for getting the best medical service of home. Our vision is to make healthcare affordable and accessible to everyone." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.vidveda.com/" />
+    <meta property="og:title" content="VID VEDA | Online Ayurveda" />
+    <meta property="og:description" content="VID VEDA is an online service for getting the best medical service of home. Our vision is to make healthcare affordable and accessible to everyone." />
+    <meta name="Keywords" content="VID VEDA,Doctor,Ayurvedic,Ayurveda,Video Call Doctor,Online Doctor,Online Ayurveda">
+    <meta name="twitter:title" content="VID VEDA" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@vidveda" />
+    <meta name="twitter:domain" content="vidveda.com" />
+    <meta name="twitter:creator" content="@vidveda" />
+    <meta property="og:image" content= "https://i.ibb.co/sQ6YNMy/logo.png" />
+    <meta name="twitter:image" content= "https://i.ibb.co/sQ6YNMy/logo.png"/>
+   
+    
+    {% block title %}
+    {% endblock %}
+</head>
+<body>
+<head>
+    <meta charset="UTF-8">
+    {% block styles %}
+
+    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='css/layout/nav.css') }}">
+    <link rel="shortcut icon" href= "{{ url_for('static', filename='img/logo.png') }}">
+    <link rel="icon" href= "{{ url_for('static', filename='img/logo.png') }}">
+    <link rel=apple-touch-icon-precomposed href= "{{ url_for('static', filename='img/logo.png') }}" size="120x120">
+    <link rel="apple-touch-icon-precomposed" href= "{{ url_for('static', filename='img/logo.png') }}" size="76x76" >
+    <link rel="stylesheet" href= "{{ url_for('static',filename='css/layout/footer.css') }}">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='css/global.css') }}">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='css/msgpop.css') }}">
+
+   
+
+  
+
+</head>
+<body>
+
+
+    <!--- Nav Bar Component -->
+<header>
+
+    <div class="navbackground">
+
+    <div class="navbar">
+        <div class="navlogo">
+           <a href="/"> <h2> <span class="navlogotextcolor">V</span>ID VEDA </h2>
+           </a>
+        </div>
+        <div class="navlist">
+            <div class="navbuttonarea">
+                <form method = POST action = "/">
+                    <div class="navbutton"><button class="nav-button" type = submit name = kii>Sign Up/ Sign In</button></div>  
+                </form>
+                <form method = POST action = "/">
+                    <div class="navbutton" id="navbuttoncolor"><button class="nav-button" type = submit name = check>Doctor Check In</button></div>  
+                </form>
+            </div>
+            <div class="navlistarea">
+               <a href="/">  <div class="list">Home</div></a>
+               <a href="/aboutus">  <div class="list">About</div></a>                
+               <a href="/help">  <div class="list">Help</div></a>                
+            </div>
+        </div>
+
+        <!--Hamburger Menu Component-->
+
+        <div class="hamburger" id="hamburger-1">
+            <div class="ham-line"></div>
+            <div class="ham-line"></div>
+            <div class="ham-line"></div>
+        </div>
+        <!--Hamburger Menu Component  Emds-->
+  
+    </div>
+</div>
+
+
+<div class="infobar">
+  <a href="/">  <p>VID VEDA Beta Release. We'd Love to hear You thoughts, Click Here!</p>
+    </a>
+</div>
+</header>
+
+    {% block content %}
+    {% endblock %}
+    <br>
+    <br>
+    
+<footer>
+    <div class="footerarea">
+
+        <div class="footercontent">
+
+        
+        <div class="footerlogo">
+
+            <div class="logotext"><span>V</span>ID VEDA</div>
+            <div class="copyright">Copyright © 2020 </div>
+        </div>
+        <div class="footersociallinks">
+            <h1>Social</h1>
+           
+            <a href="#">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.1431 0.741699C9.49356 0.741699 0.857422 9.37784 0.857422 20.0274C0.857422 30.677 9.49356 39.3131 20.1431 39.3131C30.7927 39.3131 39.4289 30.677 39.4289 20.0274C39.4289 9.37784 30.7927 0.741699 20.1431 0.741699ZM14.5389 29.8963H9.84198V15.7654H14.5389V29.8963ZM12.1906 13.8358H12.16C10.5839 13.8358 9.56448 12.7508 9.56448 11.3948C9.56448 10.0082 10.615 8.9532 12.2218 8.9532C13.8285 8.9532 14.8173 10.0082 14.8479 11.3948C14.8479 12.7508 13.8285 13.8358 12.1906 13.8358ZM31.4751 29.8963H26.7788V22.3366C26.7788 20.4368 26.0987 19.1411 24.3993 19.1411C23.1018 19.1411 22.329 20.0151 21.9894 20.8587C21.8652 21.1607 21.8349 21.5827 21.8349 22.005V29.8963H17.1383C17.1383 29.8963 17.1998 17.0911 17.1383 15.7654H21.8349V17.7662C22.4591 16.8033 23.5759 15.4338 26.0678 15.4338C29.158 15.4338 31.4751 17.4534 31.4751 21.7937V29.8963Z" fill="white"/>
+                    </svg>
+                    
+                    
+            </a>
+
+            <a href="https://www.instagram.com/vidveda/" target="_blank">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0)">
+                    <path d="M23.6914 20.0273C23.6914 22.0661 22.0387 23.7188 20 23.7188C17.9613 23.7188 16.3086 22.0661 16.3086 20.0273C16.3086 17.9886 17.9613 16.3359 20 16.3359C22.0387 16.3359 23.6914 17.9886 23.6914 20.0273Z" fill="white"/>
+                    <path d="M28.6328 13.4963C28.4554 13.0154 28.1723 12.5802 27.8044 12.2229C27.4472 11.8551 27.0122 11.572 26.5311 11.3946C26.1409 11.243 25.5547 11.0626 24.475 11.0135C23.307 10.9602 22.9568 10.9487 19.9999 10.9487C17.0427 10.9487 16.6925 10.9599 15.5249 11.0132C14.4452 11.0626 13.8587 11.243 13.4687 11.3946C12.9876 11.572 12.5524 11.8551 12.1954 12.2229C11.8276 12.5802 11.5445 13.0151 11.3667 13.4963C11.2152 13.8865 11.0348 14.473 10.9856 15.5527C10.9324 16.7204 10.9209 17.0706 10.9209 20.0278C10.9209 22.9846 10.9324 23.3348 10.9856 24.5028C11.0348 25.5825 11.2152 26.1687 11.3667 26.5589C11.5445 27.0401 11.8273 27.475 12.1951 27.8323C12.5524 28.2001 12.9873 28.4832 13.4685 28.6607C13.8587 28.8125 14.4452 28.9929 15.5249 29.042C16.6925 29.0953 17.0424 29.1065 19.9996 29.1065C22.9571 29.1065 23.3073 29.0953 24.4747 29.042C25.5544 28.9929 26.1409 28.8125 26.5311 28.6607C27.4969 28.2881 28.2603 27.5247 28.6328 26.5589C28.7844 26.1687 28.9648 25.5825 29.0142 24.5028C29.0675 23.3348 29.0787 22.9846 29.0787 20.0278C29.0787 17.0706 29.0675 16.7204 29.0142 15.5527C28.9651 14.473 28.7847 13.8865 28.6328 13.4963ZM19.9999 25.7141C16.8591 25.7141 14.313 23.1683 14.313 20.0275C14.313 16.8866 16.8591 14.3409 19.9999 14.3409C23.1404 14.3409 25.6865 16.8866 25.6865 20.0275C25.6865 23.1683 23.1404 25.7141 19.9999 25.7141ZM25.9114 15.445C25.1774 15.445 24.5824 14.85 24.5824 14.116C24.5824 13.3821 25.1774 12.7871 25.9114 12.7871C26.6453 12.7871 27.2403 13.3821 27.2403 14.116C27.24 14.85 26.6453 15.445 25.9114 15.445Z" fill="white"/>
+                    <path d="M19.9996 0.741699C9.35 0.741699 0.713867 9.37784 0.713867 20.0274C0.713867 30.677 9.35 39.3131 19.9996 39.3131C30.6492 39.3131 39.2853 30.677 39.2853 20.0274C39.2853 9.37784 30.6492 0.741699 19.9996 0.741699ZM31.007 24.5931C30.9534 25.772 30.766 26.5768 30.4923 27.2813C29.917 28.7689 28.7411 29.9448 27.2535 30.5201C26.5493 30.7938 25.7442 30.981 24.5656 31.0348C23.3846 31.0887 23.0074 31.1016 19.9999 31.1016C16.9921 31.1016 16.6151 31.0887 15.4339 31.0348C14.2553 30.981 13.4502 30.7938 12.746 30.5201C12.0067 30.2421 11.3375 29.8062 10.7843 29.2427C10.2211 28.6897 9.78524 28.0203 9.50715 27.2813C9.23347 26.5771 9.04602 25.772 8.99246 24.5934C8.93802 23.4122 8.92536 23.0349 8.92536 20.0274C8.92536 17.0199 8.93802 16.6426 8.99216 15.4617C9.04572 14.2828 9.23288 13.478 9.50656 12.7735C9.78465 12.0346 10.2208 11.3651 10.7843 10.8121C11.3373 10.2486 12.0067 9.81278 12.7457 9.53469C13.4502 9.26101 14.255 9.07385 15.4339 9.02C16.6148 8.96614 16.9921 8.9532 19.9996 8.9532C23.0071 8.9532 23.3844 8.96614 24.5653 9.02029C25.7442 9.07385 26.549 9.26101 27.2535 9.53439C27.9924 9.81248 28.6619 10.2486 29.2152 10.8121C29.7784 11.3654 30.2145 12.0346 30.4923 12.7735C30.7663 13.478 30.9534 14.2828 31.0073 15.4617C31.0611 16.6426 31.0738 17.0199 31.0738 20.0274C31.0738 23.0349 31.0611 23.4122 31.007 24.5931Z" fill="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0">
+                    <rect width="38.5714" height="38.5714" fill="white" transform="translate(0.713867 0.741699)"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                    
+            </a>
+
+            <a href="#">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0)">
+                    <path d="M20.2279 0C9.37351 0 0.571289 8.80222 0.571289 19.6566C0.571289 30.511 9.37351 39.3132 20.2279 39.3132C31.0823 39.3132 39.8845 30.511 39.8845 19.6566C39.8845 8.80222 31.0823 0 20.2279 0ZM29.2029 15.3261C29.2116 15.5196 29.2158 15.7139 29.2158 15.9092C29.2158 21.871 24.6777 28.7458 16.3788 28.7461H16.3791H16.3788C13.8309 28.7461 11.4599 27.9993 9.46319 26.7195C9.81621 26.7612 10.1755 26.7819 10.5394 26.7819C12.6533 26.7819 14.5987 26.0608 16.1431 24.8506C14.168 24.814 12.5027 23.5096 11.9281 21.7169C12.2031 21.7696 12.4859 21.7984 12.776 21.7984C13.1878 21.7984 13.5867 21.7429 13.9658 21.6395C11.9014 21.2262 10.3462 19.4016 10.3462 17.2169C10.3462 17.1965 10.3462 17.1782 10.3468 17.1593C10.9548 17.4974 11.65 17.7007 12.3903 17.7235C11.1788 16.9152 10.3825 15.5334 10.3825 13.968C10.3825 13.1414 10.6059 12.367 10.9935 11.7002C13.2184 14.4302 16.5435 16.2256 20.2933 16.4143C20.2159 16.0838 20.176 15.7394 20.176 15.3855C20.176 12.8948 22.1967 10.8742 24.6882 10.8742C25.986 10.8742 27.1582 11.4228 27.9815 12.2998C29.0094 12.097 29.9746 11.7215 30.8465 11.2047C30.5091 12.2578 29.794 13.1414 28.8624 13.7002C29.7751 13.591 30.645 13.3489 31.4533 12.9896C30.8495 13.8945 30.0838 14.6894 29.2029 15.3261Z" fill="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0">
+                    <rect width="39.3132" height="39.3132" fill="white" transform="translate(0.571289)"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                    
+            </a>
+
+            <a href="#">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0)">
+                    <path d="M22.1346 37.5835C21.9771 37.6092 21.8189 37.6328 21.6602 37.6545C21.8189 37.6328 21.9771 37.6092 22.1346 37.5835Z" fill="white"/>
+                    <path d="M22.5131 37.5188C22.4378 37.5327 22.3624 37.5454 22.2871 37.5583C22.3624 37.5454 22.4378 37.5327 22.5131 37.5188Z" fill="white"/>
+                    <path d="M21.2378 37.707C21.0534 37.7278 20.8678 37.7463 20.6816 37.7619C20.8678 37.7463 21.0534 37.7278 21.2378 37.707Z" fill="white"/>
+                    <path d="M21.6007 37.6626C21.5121 37.6744 21.4229 37.6854 21.334 37.6958C21.4229 37.6854 21.5121 37.6744 21.6007 37.6626Z" fill="white"/>
+                    <path d="M23.0278 37.4167C22.9615 37.4309 22.8948 37.445 22.8281 37.4586C22.8948 37.445 22.9615 37.4309 23.0278 37.4167Z" fill="white"/>
+                    <path d="M24.3056 37.0991C24.2519 37.1144 24.1982 37.1288 24.1445 37.1439C24.1982 37.1288 24.2519 37.1144 24.3056 37.0991Z" fill="white"/>
+                    <path d="M23.9196 37.2048C23.8613 37.2201 23.8027 37.2357 23.7441 37.2504C23.8027 37.2357 23.8613 37.2204 23.9196 37.2048Z" fill="white"/>
+                    <path d="M23.414 37.3313C23.3522 37.3457 23.2899 37.3593 23.2275 37.3731C23.2899 37.3593 23.3522 37.3457 23.414 37.3313Z" fill="white"/>
+                    <path d="M20.675 37.7625C20.5754 37.7708 20.4758 37.7783 20.376 37.785C20.4758 37.7783 20.5754 37.7708 20.675 37.7625Z" fill="white"/>
+                    <path d="M37.9996 18.9148C37.9996 8.47006 29.5295 0 19.0848 0C8.63998 0 0.169922 8.47006 0.169922 18.9148C0.169922 29.3596 8.63998 37.8297 19.0848 37.8297C19.1959 37.8297 19.3064 37.8274 19.4172 37.8253V23.1009H15.3535V18.365H19.4172V14.88C19.4172 10.8382 21.8846 8.63832 25.49 8.63832C27.2166 8.63832 28.7006 8.76704 29.1333 8.82448V13.0487H26.6471C24.6857 13.0487 24.3058 13.9809 24.3058 15.3487V18.365H28.9959L28.3846 23.1009H24.3058V37.0989C32.2119 34.8324 37.9996 27.5485 37.9996 18.9148Z" fill="white"/>
+                    <path d="M20.334 37.7876C20.1372 37.8003 19.9395 37.8104 19.7412 37.817C19.9395 37.8104 20.1372 37.8003 20.334 37.7876Z" fill="white"/>
+                    <path d="M19.732 37.8176C19.6275 37.8211 19.5227 37.8237 19.418 37.8254C19.5227 37.8237 19.6275 37.8211 19.732 37.8176Z" fill="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0">
+                    <rect width="37.8297" height="37.8297" fill="white" transform="translate(0.169922)"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                    
+            </a>
+
+        </div>
+
+        <div class="footerresources">
+            <h1>Resources</h1>
+            <a href="/aboutus">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Pricing</a>
+
+        </div>
+
+        <div class="footerlegal">
+            <h1>Legal</h1>
+            <a href="#">Terms and Conditions</a>
+            <a href="#">Privacy and Policy</a>
+            
+
+        </div>
+
+    </div>
+
+    </div>
+    <div class="footerline">
+
+    </div>
+</footer>
+   
+
+
+
+</body>
+
+<script>
+    const burger = document.querySelector('.hamburger');
+    const list = document.querySelector('.navlist');
+    
+    burger.addEventListener("click", () => {
+        burger.classList.toggle("ham-active");
+        list.classList.toggle("navlist-toggle");
+        
+    
+    })
+    
+    
+    
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      document.body.classList.add("resize-animation-stopper");
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        document.body.classList.remove("resize-animation-stopper");
+      }, 400);
+    });
+ 
+    
+    
+    
+    </script>
+
+
+
+
+
+</html>
+
+
+<script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Organization",
+      "name" : "VID VEDA",
+     "url" : "https://www.vidveda.com",
+     "sameAs" : [
+       "https://twitter.com/vidveda",
+       "https://facebook.com/vidveda",
+       "https://instagram.com/vidveda/?hl=en"
+       ],
+     
+    }
+    </script>
+
+
+

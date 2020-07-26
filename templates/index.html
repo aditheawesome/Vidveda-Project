@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href= "{{ url_for('static', filename='img/favicon.png') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <title>Vid Veda</title>
+</head>
+<body>
+
+<!--Navigation Bar Component-->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/"><span class="logo-text"> V</span>ID VEDA</a>
+    </div>
+<!--Navigation List Component-->
+
+<ul class="list">
+<form method = POST action = "/">
+  <li class="listitem"><button class="nav-button" type = submit name = kii>LogIn/SignUp</button></li>
+</form>
+<form method = POST action = "/">
+  <li class="listitem"><button class="nav-button" type = submit name = check>Doctor Check In</button></li>
+</form>
+  <li class="listitem"><a href='/'>Home</a></li>
+  <li class="listitem"><a href='/aboutus'>About</a></li>
+  <li class="listitem"><a href='#'>Help</a></li>
+</ul>
+<!--Navigation List Component Ends-->
+
+<!--Hamburger Menu Component-->
+
+<div class="hamburger" id="hamburger-1">
+  <div class="ham-line"></div>
+  <div class="ham-line"></div>
+  <div class="ham-line"></div>
+</div>
+<!--Hamburger Menu Component  Emds-->
+
+  </nav>
+<!--Navigation Bar Component Ends-->
+
+
+
+
+<main>
+
+<div class="container">
+  <div class="heading-area">
+    <div class="heading">
+      <span class="heading-text">Video </span>Consultation with Top Doctors Now !
+    </div>
+    <div class="buttons-area">
+    <form action = "/" method = POST> 
+      <button class="call-button" type = submit name = signup >Call Now</button>
+    </form>
+    </div>
+
+    
+  </div>
+  <div class="image-area" >
+
+  </div>
+
+</div>
+ 
+
+
+<div class="footer" >
+    
+</div>
+
+</main>
+<script src = "{{ url_for('static', filename='js/navbar.js') }}"></script>
+</body>
+
+</html>

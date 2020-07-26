@@ -1,0 +1,132 @@
+:root {
+    --bg-color: white;
+    --theme-color: #DE5555;
+    --text-color: #2b2b2b;
+    --default-black: black;
+    --default-white: white;
+    --hover-color: rgb(56, 56, 56);
+  }
+  
+  .formbox {
+    width: 90vw;
+    margin: auto;
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-radius: 15px;
+    height: 80vh;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    min-height: 400px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    -webkit-box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+  }
+  
+  .formbox form {
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 10px;
+  }
+  
+  .formbox form label {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #6d6d6d;
+  }
+  
+  .formbox form input {
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #b8b8b8;
+    padding-bottom: 10px;
+    color: #1f1f1f;
+    font-weight: 400;
+    font-size: 13px;
+    background-color: none;
+    margin-top: 20px;
+  }
+  
+  .formbox form input:focus {
+    border-bottom: 2px solid;
+    border-color: var(--theme-color);
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+  }
+  
+  .formbox form button {
+    width: 120px;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: var(--theme-color);
+    color: white;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    cursor: pointer;
+  }
+  
+  .formbox form button:hover {
+    opacity: 80%;
+  }
+  
+  .formheading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .formheading h1 {
+    color: var(--theme-color);
+    font-weight: normal;
+  }
+  
+  .formheading p {
+    color: var(--hover-color);
+    margin-top: 10px;
+  }
+  
+  .otheroptions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .otheroptions a {
+    color: #1ac528;
+    margin-left: 10px;
+  }
+  
+  @media screen and (min-width: 786px) {
+    .formbox {
+      width: 50vw;
+    }
+  }
+  /*# sourceMappingURL=signup.css.map */

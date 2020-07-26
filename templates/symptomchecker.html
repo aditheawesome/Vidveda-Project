@@ -1,0 +1,411 @@
+{% extends 'dashboard.html' %}
+{% block title %}
+<title>VID VEDA</title>
+{% endblock %}
+{% block styles %}
+<style>
+
+  
+    
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+  *{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: 'Work Sans', sans-serif;
+  }   
+  
+  .container{
+  width: 60vw;
+  height: 70vh;
+  min-height: 500px;
+  border-radius: 20px;
+  border-radius: 25px;
+  padding: 30px;
+  margin: auto;
+  margin-top: 30px;
+  border: 1px solid gray;
+  }
+  
+  
+  .inputcontainer{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  
+  }
+  
+  .inputcontainer-text{
+  margin-bottom: 30px;
+  }
+  
+  #form{
+  width: 30vw;
+  height: 30px;
+  border-radius: 25px;
+  border: 1px solid grey;
+  outline: none;
+  padding: 10px;
+  font-size: small;
+  
+  
+  }
+  
+  
+  
+  
+  .btn{
+  width: 100px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: rgb(209, 137, 137);
+  border-radius: 20px;
+  cursor: pointer;
+  
+  }
+  
+  #addbtn{
+  background-color: rgb(79, 197, 68);
+  color: white;
+  }
+  
+  
+  #btndelete{
+  background-color: red;
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  }
+  
+  
+  .stepsbutton{
+  width: 40vw;
+  margin-top: 30px;
+  }
+  
+  #stepsbutton{
+  background-color: transparent;
+  border: 2px solid tomato;
+  margin-right: 40px;
+  }
+  
+  .btn:hover{
+  opacity: 80%;
+  }
+    
+  </style>
+  
+  {% endblock %}
+  {% block content %}
+  <div class="container">
+  <div class="inputcontainer">
+  
+  <div class="inputcontainer-text">
+    <h2>Select your symptoms :</h2>
+  </div>
+  
+  <form action = '/symptomcheck' method = POST>
+    <input id = form name = form list = waaa>
+    
+  
+  
+      <datalist id = waaa>
+        <option >Fever</option>
+        <option >Chills</option>
+        <option >Headache</option>
+        <option >Runny Nose</option>
+        <option >Loose Stools</option>
+  
+  </datalist>
+  
+  
+  <button class=btn id="addbtn" type = submit name = submit>Add</button>
+  </form>
+  
+  </div>
+  
+  <form action ='/symptomcheck' method = POST>
+  <div class="stepsbutton">
+  
+  <button  class=btn id="stepsbutton" name = submit2 type = submit>Continue</button><button class=btn id="stepsbutton" name = submit1 type = submit>Clear</button></form>
+  
+  
+  </div>
+  
+  <p><button class=btn id="btndelete"  onclick="myFunction()">Delete</button></p>
+  <body>
+    {% for message in get_flashed_messages() %}
+    <p  style = "color: red">{{ message }}</p>
+    {% endfor %}
+  </body>
+  <div id = "myDIV">{{name[0]}}</div>
+  <div id = "myDIV1">{{name[1]}}</div>
+  <div id = "myDIV2">{{name[2]}}</div>
+  <div id = "myDIV3">{{name[3]}}</div>
+  <div id = "myDIV4">{{name[4]}}</div>
+  <div id = "myDIV5">{{name[5]}}</div>
+  <div id = "myDIV6">{{name[6]}}</div>
+  <div id = "myDIV7">{{name[7]}}</div>
+  <div id = "myDIV8">{{name[8]}}</div>
+  <div id = "myDIV9">{{name[9]}}</div>
+  <div id = "myDIV10">{{name[10]}}</div>
+  <div id = "myDIV11">{{name[11]}}</div>
+  <div id = "myDIV12">{{name[12]}}</div>
+  <div id = "myDIV13">{{name[13]}}</div>
+  <div id = "myDIV14">{{name[14]}}</div>
+  <div id = "myDIV15">{{name[15]}}</div>
+  <div id = "myDIV16">{{name[16]}}</div>
+  <div id = "myDIV17">{{name[17]}}</div>
+  <div id = "myDIV18">{{name[18]}}</div>
+  <div id = "myDIV19">{{name[19]}}</div>
+  
+  
+  
+  </div>
+  
+  
+  
+  <script>
+  
+    function myFunction() {
+      var x = document.getElementById("myDIV");
+      if (x.innerHTML == ""){
+        x.innerHTML = "";
+      } else {
+      if (x.innerHTML === "{{name[0]}}") {
+        x.innerHTML = "<form method = POST action = /symptomchecker/0><button name = checker{{0}}>X</button>   {{name[0]}}</form>";
+      } else {
+        x.innerHTML = "{{name[0]}}";
+      }
+      }
+      var x1 = document.getElementById("myDIV1");
+      if (x1.innerHTML == ""){
+        x1.innerHTML = "";
+      } else {
+      if (x1.innerHTML === "{{name[1]}}") {
+        x1.innerHTML = "<form method = POST action = /symptomchecker/1><button name = checker{{1}}>X</button>   {{name[1]}}</form>";
+      } else {
+        x1.innerHTML = "{{name[1]}}";
+      }
+      }
+      var x2 = document.getElementById("myDIV2");
+      if (x2.innerHTML == ""){
+        x2.innerHTML = "";
+      } else {
+      if (x2.innerHTML === "{{name[2]}}") {
+        x2.innerHTML = "<form method = POST action = /symptomchecker/2><button name = checker{{2}}>X</button>   {{name[2]}}</form>";
+      } else {
+        x2.innerHTML = "{{name[2]}}";
+      }
+      }
+      var x3 = document.getElementById("myDIV3");
+      if (x3.innerHTML == ""){
+        x3.innerHTML = "";
+      } else {
+      if (x3.innerHTML === "{{name[3]}}") {
+        x3.innerHTML = "<form method = POST action = /symptomchecker/3><button name = checker{{3}}>X</button>   {{name[3]}}</form>";
+      } else {
+        x3.innerHTML = "{{name[3]}}";
+      }
+      }
+      var x4 = document.getElementById("myDIV4");
+      if (x4.innerHTML == ""){
+        x4.innerHTML = "";
+      } else {
+          if (x4.innerHTML === "{{name[4]}}") {
+            x4.innerHTML = "<form method = POST action = /symptomchecker/4><button name = checker{{4}}>X</button>   {{name[4]}}</form>";
+          } else {
+            x4.innerHTML = "{{name[4]}}";
+        }
+      }
+      
+      var x5 = document.getElementById("myDIV5");
+      if (x5.innerHTML == ""){
+        x5.innerHTML = "";
+      } else {
+          if (x5.innerHTML === "{{name[5]}}") {
+            x5.innerHTML = "<form method = POST action = /symptomchecker/5><button name = checker{{5}}>X</button>   {{name[5]}}</form>";
+          } else {
+            x5.innerHTML = "{{name[5]}}";
+          }
+      }
+      var x6 = document.getElementById("myDIV6");
+      if (x6.innerHTML == ""){
+        x6.innerHTML = "";
+      } else {
+      if (x6.innerHTML === "{{name[6]}}") {
+        x6.innerHTML = "<form method = POST action = /symptomchecker/6><button name = checker{{6}}>X</button>   {{name[6]}}</form>";
+      } else {
+        x6.innerHTML = "{{name[6]}}";
+      }
+      }
+      if (x7.innerHTML == ""){
+        x7.innerHTML = "";
+      } else {
+      var x7 = document.getElementById("myDIV7");
+      if (x7.innerHTML === "{{name[7]}}") {
+        x7.innerHTML = "<form method = POST action = /symptomchecker/7><button name = checker{{7}}>X</button>   {{name[7]}}</form>";
+      } else {
+        x7.innerHTML = "{{name[7]}}";
+      }
+      }
+      if (x8.innerHTML == ""){
+        x8.innerHTML = "";
+      } else {
+      var x8 = document.getElementById("myDIV8");
+      if (x8.innerHTML === "{{name[8]}}") {
+        x8.innerHTML = "<form method = POST action = /symptomchecker/8><button name = checker{{8}}>X</button>   {{name[8]}}</form>";
+      } else {
+        x8.innerHTML = "{{name[8]}}";
+      }
+      }
+      if (x9.innerHTML == ""){
+        x9.innerHTML = "";
+      } else {
+      var x9 = document.getElementById("myDIV9");
+      if (x9.innerHTML === "{{name[9]}}") {
+        x9.innerHTML = "<form method = POST action = /symptomchecker/9><button name = checker{{0}}>X</button>   {{name[9]}}</form>";
+      } else {
+        x9.innerHTML = "{{name[9]}}";
+      }
+      }
+      var x10 = document.getElementById("myDIV10");
+      if (x10.innerHTML == ""){
+        x10.innerHTML = "";
+      } else {
+      if (x10.innerHTML === "{{name[10]}}") {
+        x10.innerHTML = "<form method = POST action = /symptomchecker/10><button name = checker{{10}}>X</button>   {{name[10]}}</form>";
+      } else {
+        x10.innerHTML = "{{name[10]}}";
+      }
+      }
+      var x19 = document.getElementById("myDIV19");
+      if (x19.innerHTML == ""){
+        x19.innerHTML = "";
+      } else {
+      if (x19.innerHTML === "{{name[19]}}") {
+        x19.innerHTML = "<form method = POST action = /symptomchecker/19><button name = checker{{19}}>X</button>   {{name[19]}}</form>";
+      } else {
+        x19.innerHTML = "{{name[19]}}";
+      }
+      }
+      var x18 = document.getElementById("myDIV18");
+      if (x18.innerHTML == ""){
+        x18.innerHTML = "";
+      } else {
+      if (x18.innerHTML === "{{name[18]}}") {
+        x18.innerHTML = "<form method = POST action = /symptomchecker/18><button name = checker{{18}}>X</button>   {{name[18]}}</form>";
+      } else {
+        x18.innerHTML = "{{name[18]}}";
+      }
+      }
+      var x17 = document.getElementById("myDIV17");
+      if (x17.innerHTML == ""){
+        x17.innerHTML = "";
+      } else {
+      if (x17.innerHTML === "{{name[17]}}") {
+        x17.innerHTML = "<form method = POST action = /symptomchecker/17><button name = checker{{17}}>X</button>   {{name[17]}}</form>";
+      } else {
+        x17.innerHTML = "{{name[17]}}";
+      }
+      }
+      var x16 = document.getElementById("myDIV16");
+      if (x16.innerHTML == ""){
+        x16.innerHTML = "";
+      } else {
+      if (x16.innerHTML === "{{name[16]}}") {
+        x16.innerHTML = "<form method = POST action = /symptomchecker/16><button name = checker{{16}}>X</button>   {{name[16]}}</form>";
+      } else {
+        x16.innerHTML = "{{name[16]}}";
+      }
+      }
+      var x15 = document.getElementById("myDIV15");
+      if (x15.innerHTML == ""){
+        x15.innerHTML = "";
+      } else {
+      if (x15.innerHTML === "{{name[15]}}") {
+        x15.innerHTML = "<form method = POST action = /symptomchecker/15><button name = checker{{15}}>X</button>   {{name[15]}}</form>";
+      } else {
+        x15.innerHTML = "{{name[15]}}";
+      }
+      }
+      var x14 = document.getElementById("myDIV14");
+      if (x14.innerHTML == ""){
+        x14.innerHTML = "";
+      } else {
+      if (x14.innerHTML === "{{name[14]}}") {
+        x14.innerHTML = "<form method = POST action = /symptomchecker/14><button name = checker{{14}}>X</button>   {{name[14]}}</form>";
+      } else {
+        x14.innerHTML = "{{name[14]}}";
+      }
+      }
+      var x13 = document.getElementById("myDIV13");
+      if (x13.innerHTML == ""){
+        x13.innerHTML = "";
+      } else {
+      if (x13.innerHTML === "{{name[13]}}") {
+        x13.innerHTML = "<form method = POST action = /symptomchecker/13><button name = checker{{13}}>X</button>   {{name[13]}}</form>";
+      } else {
+        x13.innerHTML = "{{name[13]}}";
+      }
+      }
+      var x12 = document.getElementById("myDIV12");
+      if (x12.innerHTML == ""){
+        x12.innerHTML = "";
+      } else {
+      if (x12.innerHTML === "{{name[12]}}") {
+        x12.innerHTML = "<form method = POST action = /symptomchecker/12><button name = checker{{12}}>X</button>   {{name[12]}}</form>";
+      } else {
+        x12.innerHTML = "{{name[12]}}";
+      }
+      }
+      var x11 = document.getElementById("myDIV11");
+      if (x11.innerHTML == ""){
+        x11.innerHTML = "";
+      } else {
+      if (x11.innerHTML === "{{name[11]}}") {
+        x11.innerHTML = "<form method = POST action = /symptomchecker/11><button name = checker{{11}}>X</button>   {{name[11]}}</form>";
+      } else {
+        x11.innerHTML = "{{name[11]}}";
+      }
+      }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+    }
+    </script>
+    <script>
+      // Find all inputs on the DOM which are bound to a datalist via their list attribute.
+  var inputs = document.querySelectorAll('input[list]');
+  for (var i = 0; i < inputs.length; i++) {
+    // When the value of the input changes...
+    inputs[i].addEventListener('change', function() {
+      var optionFound = false,
+        datalist = this.list;
+      // Determine whether an option exists with the current value of the input.
+      for (var j = 0; j < datalist.options.length; j++) {
+          if (this.value == datalist.options[j].value) {
+              optionFound = true;
+              break;
+          }
+      }
+      // use the setCustomValidity function of the Validation API
+      // to provide an user feedback if the value does not exist in the datalist
+      if (optionFound) {
+        this.setCustomValidity('');
+      } else {
+        this.setCustomValidity('Pleae seclect one of the symptoms on the list.');
+      }
+    });
+  }
+  
+  </script>
+  {% endblock content %}

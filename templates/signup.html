@@ -1,0 +1,87 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+
+<title>VID VEDA | Sign Up</title>
+
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/user_signup.css') }}">
+{% endblock %}
+{% block content %}
+
+
+
+<div class="formbox">
+    <div class="formheading">
+        <h1>Sign Up</h1>
+        <p>Let's get Started With VID VEDA</p>
+    </div>
+            <form action = "/" method = "POST" >
+   
+                <label for="fname">First Name</label>
+                <input class="input" type="text" placeholder="First Name" id = "first_name" name = "first_name" place_holder = "First Name" required> 
+                <div class="middlenameblock">
+                    <label for="lname">Middle Name</label>
+                    <input class="input" type="text" placeholder="Middle Name" id = "middle_name" name = "middle_name" > 
+                    
+                </div>
+               
+                <label for="lname">Last Name</label>
+                <input class="input" type="text" placeholder="Last Name" id = "last_name" name = "last_name" place_holder = "Last Name" required> 
+                
+                <label for="email">Email</label>
+                <input class="input" type="email" placeholder="Email" id = "content3" name = "content3" place_holder = "Email" required> 
+                
+                <label for="1password">Enter Password</label>
+                <input class="input" type="password" placeholder="Password" id ="content4" name = content4 place_holder = "Password" required> 
+                
+                <label for="2password">Re Enter Password</label>
+                <input class="input" type="password" placeholder="Re Enter Password" id = content5 name = content5 place_holder = "Re Enter Password" required> 
+                
+                
+                <button type="submit" name = submit2 id = submit2 ><p class="sign">Sign Up</p></button>
+             
+                    <div class="otheroptions">
+                        <p>Already have an Account ? </p><a href="/login"> Sign In</a>
+                      </div>
+
+
+            {% for message in get_flashed_messages() %}
+
+            <div class="MsgPopArea">
+                <div class="msgarea">
+                    <p>{{ message }} </p>
+
+                </div>
+                <div class="btnarea">
+                    <button class="msgbtn"> Ok </button>
+
+                </div>
+                
+            </div>
+            {% endfor %}
+
+        </form>
+
+        </div>
+
+
+        <script>
+            const btn = document.querySelector(".msgbtn")
+            btn.addEventListener("click", () => {
+                const msgbox = document.querySelector(".MsgPopArea")
+                msgbox.classList.toggle("msgdisplay")
+            })
+        </script>
+        
+
+
+{% endblock content %}
+
+
+
+
+
