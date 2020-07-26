@@ -65,6 +65,12 @@ db.create_all()
 db.session.commit()
 
 
+
+@app.route('/.well-known/acme-challenge/OUARHU80tlfD7P3ZO5IPQGnGC_rCJUTFJ7rswEFQ21g')
+def ssl():
+    return render_template('ssl.html')
+
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
