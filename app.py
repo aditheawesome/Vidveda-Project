@@ -66,7 +66,7 @@ db.session.commit()
 
 
 
-@app.route('/.well-known/acme-challenge/OUARHU80tlfD7P3ZO5IPQGnGC_rCJUTFJ7rswEFQ21g')
+@app.route('/.well-known/acme-challenge/JDMqizXXpBvEaMoC87xpHy-XphwxO8sz72KNzartHes')
 def ssl():
     return render_template('ssl.html')
 
