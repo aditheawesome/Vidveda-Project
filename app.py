@@ -343,6 +343,7 @@ def logout():
     logout_user()
     return redirect('/')
 @app.route('/vidcall/<hi787>')
+@login_required
 def plz(hi787):
     hi787 = hi787
     return render_template('hope.html', plz = hi787)
@@ -369,6 +370,7 @@ def pwd(hq):
     else:    
         return render_template('rrrrr.html', uuu = hq)
 @app.route('/symptomcheck', methods = ["POST", "GET"])
+@login_required
 def symptomcheck():
     if request.method == 'POST':
         if 'submit' in request.form:
@@ -402,6 +404,7 @@ def symptomcheck():
     else:
         return render_template('symptomchecker.html', name = aefdsv)
 @app.route('/symptomchecker/<ide>', methods = ["POST", "GET"])
+@login_required
 def hire(ide):
     ide = ide
     if 'checker' + ide in request.form:
