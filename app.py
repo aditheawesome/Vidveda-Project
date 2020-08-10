@@ -65,6 +65,15 @@ db.create_all()
 db.session.commit()
 
 
+@app.before_request
+def before_request():
+    if request.url.startswith('http://'):
+        url = request.url.replace('http://', 'https://', 1)
+        code = 301
+        return redirect(url, code=code)
+
+
+
 
 @app.route('/.well-known/acme-challenge/JDMqizXXpBvEaMoC87xpHy-XphwxO8sz72KNzartHes')
 def ssl():
@@ -414,4 +423,4 @@ def hire(ide):
 def signup():
     return render_template('signup.html')
 if __name__ == '__main__':
-    app.run(debug=True)     
+    app.run(debug=False)     
