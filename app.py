@@ -295,7 +295,7 @@ def index():
                     
                     Forgot Password
 
-                    Go to hotspotsnearu.com/pwdreset/"" + str(yeeee) + " to reset your password."
+                    Go to vidveda.com/pwdreset/"" + str(yeeee) + " to reset your password."
 
                     context = ssl.create_default_context()
                     with smtplib.SMTP(smtp_server, port) as server:
@@ -402,7 +402,7 @@ def symptomcheck():
             client = Client(account_sid, auth_token)
             message = client.messages \
                 .create(
-                    body='The link is: hotspotsnearu.com/vidcall/' + str(hi786) + ", and the symptoms are " + " ".join(aefdsv),
+                    body='The link is: vidveda.com/vidcall/' + str(hi786) + ", and the symptoms are " + " ".join(aefdsv),
                     from_='+12084233761',
                     to="+" + str(item[r1].phone_number)
                 )
