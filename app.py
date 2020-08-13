@@ -30,8 +30,33 @@ app.config['REMEMBER_COOKIE_DURATION'] = delta
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = '/login'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+
+
+env = 'dev'
+
+if (env=='dev'):
+    app.debug=True
+    #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bvipgytqmvgyiq:7b6c0f324808e528c01d5e2351c52834e94cdb8fc92cdd3e268a0977a8ca2d84@ec2-54-235-192-146.compute-1.amazonaws.com:5432/dfmrk83fdrmlua'
+
+   # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:admin@localhost/data'
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bvipgytqmvgyiq:7b6c0f324808e528c01d5e2351c52834e94cdb8fc92cdd3e268a0977a8ca2d84@ec2-54-235-192-146.compute-1.amazonaws.com:5432/dfmrk83fdrmlua'
+    app.debug=False
+    @app.before_request
+    def before_request():
+        if request.url.startswith('http://'):
+            url = request.url.replace('http://', 'https://', 1)
+            code = 301
+            return redirect(url, code=code)
+
+
+
+
+
+
 db = SQLAlchemy(app)
+
 # Define the User data-model
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
@@ -65,12 +90,7 @@ db.create_all()
 db.session.commit()
 
 
-@app.before_request
-def before_request():
-    if request.url.startswith('http://'):
-        url = request.url.replace('http://', 'https://', 1)
-        code = 301
-        return redirect(url, code=code)
+
 
 
 
@@ -423,4 +443,4 @@ def hire(ide):
 def signup():
     return render_template('signup.html')
 if __name__ == '__main__':
-    app.run(debug=False)     
+    app.run()     

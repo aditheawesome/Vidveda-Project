@@ -36,6 +36,8 @@ Werkzeug==1.0.1
 WTForms==2.3.1
 zope.interface==5.1.0
 virtualenv==20.0.25
+psycopg2==2.8.3
+psycopg2-binary==2.8.3
 gevent
 gunicorn
 gevent
