@@ -32,14 +32,12 @@ login_manager.init_app(app)
 login_manager.login_view = '/login'
 
 
-env = 'dev'
+env = 'pro'
 
 if (env=='dev'):
     app.debug=True
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bvipgytqmvgyiq:7b6c0f324808e528c01d5e2351c52834e94cdb8fc92cdd3e268a0977a8ca2d84@ec2-54-235-192-146.compute-1.amazonaws.com:5432/dfmrk83fdrmlua'
-
-   # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:admin@localhost/data'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:admin@localhost/data'
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bvipgytqmvgyiq:7b6c0f324808e528c01d5e2351c52834e94cdb8fc92cdd3e268a0977a8ca2d84@ec2-54-235-192-146.compute-1.amazonaws.com:5432/dfmrk83fdrmlua'
     app.debug=False
