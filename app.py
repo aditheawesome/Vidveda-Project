@@ -156,7 +156,7 @@ def checkin2(hi):
         u.secret_code = None
         db.session.commit()
         flash("Checked Out")
-        return redirect('/checkin')
+        return redirect('/logout')
     else:
         y = User.query.filter_by(secret_code = hi).first()
         return render_template('checko.html', hi = y.first_name, bye = hi)
@@ -274,6 +274,7 @@ def index():
                         waa = str(uuid.uuid4())
                         ser.secret_code = waa
                         db.session.commit()
+                        login_user(ser, remember = True)
                         return redirect('/checkin2/' + str(ser.secret_code))
                     else:
                         flash("Account not a doctor")
