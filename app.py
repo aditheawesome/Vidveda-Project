@@ -421,7 +421,7 @@ def symptomcheck():
             client = Client(account_sid, auth_token)
             message = client.messages \
                 .create(
-                    body='The link is: vidveda.com/vidcall/' + str(hi786) + ", and the symptoms are " + " ".join(aefdsv),
+                    body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(current_user.first_name) + " " + str(current_user.last_name)", and the symptoms are " + " ".join(aefdsv),
                     from_='+12084233761',
                     to="+" + str(item[r1].phone_number)
                 )
