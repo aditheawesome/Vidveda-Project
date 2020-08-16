@@ -216,7 +216,7 @@ def index():
                     db.session.add(new_user)
                     db.session.commit()
                     flash('You were succesfully signed up')
-                    return redirect('/signup')
+                    return redirect('/login')
                 else:
                     flash("Passwords don't match")
                     return redirect('/signup')
