@@ -355,7 +355,7 @@ def index():
                         db.session.add(wew_user)
                         db.session.commit()
                         flash('You were succesfully signed up')
-                        return redirect('/dctrsignup')
+                        return redirect('/checkin')
                     else:
                         flash("Passwords don't match")
                         return redirect('/dctrsignup')
