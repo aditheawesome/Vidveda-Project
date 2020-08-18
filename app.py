@@ -144,7 +144,10 @@ def checkin():
 @app.route('/doctorstatus')
 def status():
     return render_template("checkin2.html")
-
+@app.route('/test')
+def test():
+    weeee = User.query.filter_by(checkin = True).all()
+    return render_template('test.html', test = weeee)
 @app.route('/no')
 def ni():
     return('ifg')    
