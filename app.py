@@ -419,11 +419,8 @@ def symptomcheck():
                     to="+" + str(item[r1].phone_number)
                 )
             return redirect('/vidcall/' + str(hi786) )
-        elif 'submit1' in request.form:
-            aefdsv.clear()
-            return redirect('/symptomcheck')
     else:
-        return render_template('symptomchecker.html', name = aefdsv)
+        return render_template('symptomchecker.html')
 
 @app.route('/signup')
 def signup():
