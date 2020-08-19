@@ -404,18 +404,8 @@ def pwd(hq):
 @login_required
 def symptomcheck():
     if request.method == 'POST':
-        if 'submit' in request.form:
-            bsdvsdv = request.form['form']
-            if len(aefdsv) == 20:
-                flash('Sorry, the max limit is 20')
-            else:
-                for re in range(0, len(aefdsv)):
-                    if aefdsv[re] == bsdvsdv:
-                        flash("Symptom Repeated")
-                        return redirect('/symptomcheck')
-                aefdsv.append(bsdvsdv)
-            return redirect('/symptomcheck')
-        elif 'submit2' in request.form:
+        if 'symptomsubmit' in request.form:
+            bsdvsdv = request.form['symptom_check']
             item = User.query.filter_by(checkin = True).all()            
             tttttt = int(len(item)) - 1
             r1 = random.randint(0, tttttt)
@@ -424,7 +414,7 @@ def symptomcheck():
             client = Client(account_sid, auth_token)
             message = client.messages \
                 .create(
-                    body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + " ".join(aefdsv),
+                    body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdv
                     from_='+12084233761',
                     to="+" + str(item[r1].phone_number)
                 )
@@ -434,13 +424,7 @@ def symptomcheck():
             return redirect('/symptomcheck')
     else:
         return render_template('symptomchecker.html', name = aefdsv)
-@app.route('/symptomchecker/<ide>', methods = ["POST", "GET"])
-@login_required
-def hire(ide):
-    ide = ide
-    if 'checker' + ide in request.form:
-        del aefdsv[int(ide)]
-        return redirect('/symptomcheck')
+
 @app.route('/signup')
 def signup():
     return render_template('signup.html')
