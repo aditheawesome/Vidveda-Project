@@ -32,7 +32,7 @@ login_manager.init_app(app)
 login_manager.login_view = '/login'
 
 
-env = 'pro'
+env = 'dev'
 
 if (env=='dev'):
     app.debug=True
