@@ -404,21 +404,20 @@ def pwd(hq):
 @login_required
 def symptomcheck():
     if request.method == 'POST':
-        if 'symptomsubmit' in request.form:
-            bsdvsdv = request.form['symptom_check']
-            item = User.query.filter_by(checkin = True).all()            
-            tttttt = int(len(item)) - 1
-            r1 = random.randint(0, tttttt)
-            account_sid = 'AC1d3bc69c76aeefb1c5a7f3ab83d95a8b'
-            auth_token = '90ca4aa26d68ca112d933bca87c01be0'
-            client = Client(account_sid, auth_token)
-            message = client.messages \
-                .create(
-                    body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdv,
-                    from_='+12084233761',
-                    to="+" + str(item[r1].phone_number)
-                )
-            return redirect('/vidcall/' + str(hi786) )
+        bsdvsdv = request.form['symptom_check']
+        item = User.query.filter_by(checkin = True).all()            
+        tttttt = int(len(item)) - 1
+        r1 = random.randint(0, tttttt)
+        account_sid = 'AC1d3bc69c76aeefb1c5a7f3ab83d95a8b'
+        auth_token = '90ca4aa26d68ca112d933bca87c01be0'
+        client = Client(account_sid, auth_token)
+        message = client.messages \
+            .create(
+                body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdv,
+                from_='+12084233761',
+                to="+" + str(item[r1].phone_number)
+            )
+        return redirect('/vidcall/' + str(hi786) )
     else:
         return render_template('symptomchecker.html')
 
