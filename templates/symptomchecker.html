@@ -3,14 +3,22 @@
 <title>VID VEDA</title>
 {% endblock %}
 {% block styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/signin.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/symptom.css') }}">
 {% endblock %}
 {% block content %}
 
-<form action = '/symptomcheck' method = "POST">
+<main>
+  <h1>Please describe your symptoms in brief</h1>
+  <p>This information will be shared to your doctor for better assessment</p>
+  <form action = '/symptomcheck' method = "POST">
   
-  <textarea name = "symptom_check" style = "resize: none; width: 200; height: 200" ></textarea>
+    <textarea name = "symptom_check" rows="4" cols="250" ></textarea>
+  
+    <button name = "symptom_submit">Submit</button>
+  
+  </form>
+</main>
 
-  <button name = "symptom_submit">Submit</button>
+
  
 {% endblock content %}
