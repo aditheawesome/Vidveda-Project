@@ -299,7 +299,7 @@ def index():
                 
         elif 'reset' in request.form:
             flash('Password reset is down right now.')
-            return redirect('/forgot")
+            return redirect("/forgot")
             """
             weee = request.form['sss']
             reeer = User.query.filter_by(username = weee).first()
