@@ -11,8 +11,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import uuid 
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
 import random 
 from twilio.rest import Client
 import os
