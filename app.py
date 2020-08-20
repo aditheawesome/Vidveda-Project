@@ -309,7 +309,7 @@ def index():
                 db.session.commit()
                 yeeee = reeer.secret_code
                 try:
-                    receiver = wee
+                    receiver = weee
                     sender = "no-reply@vidveda.com"
                     message = Mail(
                         from_email=(sender,"VID VEDA") ,
