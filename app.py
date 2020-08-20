@@ -302,6 +302,9 @@ def index():
                 return redirect('/symptomcheck')
                 
         elif 'reset' in request.form:
+            flash('Password reset is down right now.')
+            return redirect('/reset")
+            """
             weee = request.form['sss']
             reeer = User.query.filter_by(username = weee).first()
             if reeer:
@@ -327,6 +330,7 @@ def index():
             else:
                 flash("Invalid email")
                 return redirect('/forgot')
+                """
         elif 'docsubmit2' in request.form:
             aee = request.form['content9']
             aaa = request.form['content6']
