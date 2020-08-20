@@ -11,6 +11,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import uuid 
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 import random 
 from twilio.rest import Client
 import os
@@ -36,11 +38,13 @@ env = 'pro'
 
 if (env=='dev'):
     app.debug=True
+    api_key = os.environ.get('SENDGRID_API_KEY')
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bvipgytqmvgyiq:7b6c0f324808e528c01d5e2351c52834e94cdb8fc92cdd3e268a0977a8ca2d84@ec2-54-235-192-146.compute-1.amazonaws.com:5432/dfmrk83fdrmlua'
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bvipgytqmvgyiq:7b6c0f324808e528c01d5e2351c52834e94cdb8fc92cdd3e268a0977a8ca2d84@ec2-54-235-192-146.compute-1.amazonaws.com:5432/dfmrk83fdrmlua'
     app.debug=False
+    api_key = process.env.SENDGRID_API_KEY
     @app.before_request
     def before_request():
         if request.url.startswith('http://'):
@@ -298,9 +302,6 @@ def index():
                 return redirect('/symptomcheck')
                 
         elif 'reset' in request.form:
-            flash("Sorry, forgot password is unavaliable, please email us at noreply.vidveda@hotspotsnearu.com")
-            return redirect('/forgot')
-            """
             weee = request.form['sss']
             reeer = User.query.filter_by(username = weee).first()
             if reeer:
@@ -308,33 +309,24 @@ def index():
                 db.session.commit()
                 yeeee = reeer.secret_code
                 try:
-                    port = 465  # For starttls
-                    smtp_server = "smtp.hotspotsnearu.com"
-                    sender_email = "noreply.vidveda@hotspotsnearu.com"
-                    receiver_email = weee
-                    password = "aditya121207"
-                    messager = ""\
-                    
-                    Forgot Password
-
-                    Go to vidveda.com/pwdreset/"" + str(yeeee) + " to reset your password."
-
-                    context = ssl.create_default_context()
-                    with smtplib.SMTP(smtp_server, port) as server:
-                        server.ehlo()  # Can be omitted
-                        server.starttls(context=context)
-                        server.ehlo()  # Can be omitted
-                        server.login(sender_email, password)
-                        server.sendmail(sender_email, receiver_email, messager)
-                        flash("Message Sent")
-                        return redirect('/forgot')
+                    receiver = wee
+                    sender = "no-reply@vidveda.com"
+                    message = Mail(
+                        from_email=(sender,"VID VEDA") ,
+                        to_emails=receiver,
+                        subject='TEST MAIL',
+                        html_content=f'<strong>HI! {receiver} are you getting this? </strong>')
+                        sg = SendGridAPIClient(api_key)
+                        response = sg.send(message)
+                        print(response.status_code)
+                        print(response.body)
+                        print(response.headers)
                 except:
                     flash("Sorry, the account might linked with an invalid email, you may have to create another account.")
                     return redirect('/forgot')
             else:
                 flash("Invalid email")
                 return redirect('/forgot')
-                """
         elif 'docsubmit2' in request.form:
             aee = request.form['content9']
             aaa = request.form['content6']
