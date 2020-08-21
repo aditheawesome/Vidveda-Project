@@ -22,10 +22,9 @@
         </tr>
         </table>
 {% endfor %}
-
+<select>
 {% for y in test %}
-  <select>
     <option>Dr {{ y.first_name }} {{ y.last_name }}</option>
-  </select>
 {% endfor %}
+</select>
 {% endblock content %}
