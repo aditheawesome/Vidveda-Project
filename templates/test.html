@@ -23,4 +23,9 @@
         </table>
 {% endfor %}
 
+{% for y in test %}
+  <select>
+    <option>Dr {{ x.first_name }} {{ x.last_name }}</option>
+  </select>
+{% endfor %}
 {% endblock content %}
