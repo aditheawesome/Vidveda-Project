@@ -1,14 +1,13 @@
 import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
-
-
+from boto.s3.connection import S3Connection
 
 def send_mail(receiver, link):
     if env == "dev" :
         api_key = os.environ.get('SENDGRID_API_KEY')
     else:
-        api_key = process.env.SENDGRID_API_KEY
+        api_key = S3Connection(os.environ['SENDGRID_API_KEY'])
         sender = "no-reply@vidveda.com"
         message = Mail(
             from_email=(sender,"VID VEDA") ,
