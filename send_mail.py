@@ -14,7 +14,7 @@ else:
     api_key = process.env.SENDGRID_API_KEY
 
 
-receiver = "asmita016@gmail.com"
+receiver = "adityamittal1207@gmail.com"
 sender = "no-reply@vidveda.com"
 message = Mail(
     from_email=(sender,"VID VEDA") ,
