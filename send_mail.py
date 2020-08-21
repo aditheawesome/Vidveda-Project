@@ -2,8 +2,10 @@ import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 from boto.s3.connection import S3Connection
-
+from flask import Flask, render_template, url_for, request, redirect, flash
 def send_mail(receiver, link):
+    env = "pro"
+    
     if env == "dev" :
         api_key = os.environ.get('SENDGRID_API_KEY')
     else:
