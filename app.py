@@ -309,6 +309,7 @@ def index():
                 yeeee = reeer.secret_code
                 link = "vidveda.com/pwdreset/" + yeeee
                 send_mail(weee, link)
+                flash('Mail Sent')
                 return redirect('/forgot')
             else:
                 flash("Invalid email")
