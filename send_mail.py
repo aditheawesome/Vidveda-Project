@@ -18,11 +18,11 @@ def send_mail(receiver, link):
         try:
             sg = SendGridAPIClient(api_key)
             response = sg.send(message)
+            flash('Email Sent')
+            return redirect('/forgot')
             print(response.status_code)
             print(response.body)
             print(response.headers)
-            flash('Email Sent')
-            return redirect('/forgot')
         except Exception as e:
             flash('Sorry, but the email linked to this account is invalid')
             return redirect('/forgot')
