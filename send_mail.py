@@ -4,6 +4,7 @@ from sendgrid.helpers.mail import Mail
 from boto.s3.connection import S3Connection
 from flask import Flask, render_template, url_for, request, redirect, flash
 def send_mail(receiver, link):
+    return 'hi'
     env = "pro"
     
     if env == "dev" :
