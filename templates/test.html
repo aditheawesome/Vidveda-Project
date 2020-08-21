@@ -21,10 +21,5 @@
             <a style = "color: black"> Dr. {{ x.first_name }} {{ x.last_name }} </a> <button name = "{{x.id}}">x</button>
         </tr>
         </table>
-{% endfor %}
-<select>
-{% for y in test %}
-    <option>Dr {{ y.first_name }} {{ y.last_name }}</option>
-{% endfor %}
-</select>
+
 {% endblock content %}
