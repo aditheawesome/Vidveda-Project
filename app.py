@@ -14,6 +14,7 @@ from email.mime.multipart import MIMEMultipart
 import random 
 from twilio.rest import Client
 import os
+from send_mail import send_mail
 from datetime import timedelta
 from flask_mail import Mail, Message
 import smtplib, ssl
@@ -298,35 +299,18 @@ def index():
                 return redirect('/symptomcheck')
                 
         elif 'reset' in request.form:
-            flash('Password reset is down right now.')
-            return redirect("/forgot")
-            """
             weee = request.form['sss']
             reeer = User.query.filter_by(username = weee).first()
             if reeer:
                 reeer.secret_code = str(uuid.uuid4())
                 db.session.commit()
                 yeeee = reeer.secret_code
-                try:
-                    receiver = weee
-                    sender = "no-reply@vidveda.com"
-                    message = Mail(
-                        from_email=(sender,"VID VEDA") ,
-                        to_emails=receiver,
-                        subject='TEST MAIL',
-                        html_content=f'<strong>HI! {receiver} are you getting this? </strong>')
-                        sg = SendGridAPIClient(api_key)
-                        response = sg.send(message)
-                        print(response.status_code)
-                        print(response.body)
-                        print(response.headers)
-                except:
-                    flash("Sorry, the account might linked with an invalid email, you may have to create another account.")
-                    return redirect('/forgot')
+                link = "vidveda.com/pwdreset/" + yeeee
+                send_mail(weee, link)
             else:
                 flash("Invalid email")
                 return redirect('/forgot')
-                """
+
         elif 'docsubmit2' in request.form:
             aee = request.form['content9']
             aaa = request.form['content6']
@@ -417,4 +401,4 @@ def symptomcheck():
 def signup():
     return render_template('signup.html')
 if __name__ == '__main__':
-    app.run()     
+    app.run()
