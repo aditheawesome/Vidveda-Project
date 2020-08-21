@@ -9,6 +9,7 @@ def send_mail(receiver, link):
     if env == "dev" :
         api_key = os.environ.get('SENDGRID_API_KEY')
     else:
+        api_key = S3Connection(os.environ['SENDGRID_API_KEY'])
         sender = 'no-reply@vidveda.com'
         message = Mail(
             from_email=(sender,"VID VEDA") ,
