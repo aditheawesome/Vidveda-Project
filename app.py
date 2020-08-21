@@ -2,6 +2,8 @@ from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy 
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from datetime import datetime 
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 import googlemaps
 import requests
 import json
