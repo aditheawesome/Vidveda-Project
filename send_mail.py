@@ -23,6 +23,7 @@ def send_mail(receiver, link):
         print(response.status_code)
         print(response.body)
         print(response.headers)
+        return redirect('/forgot')
     except Exception as e:
         flash('Sorry, but the email linked to this account is invalid')
         return redirect('/forgot')
