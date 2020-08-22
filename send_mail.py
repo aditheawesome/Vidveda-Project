@@ -5,6 +5,7 @@ from boto.s3.connection import S3Connection
 from flask import Flask, render_template, url_for, request, redirect, flash
 
 
+
 env = "pro"
 
 def send_mail(receiver, link):
@@ -14,6 +15,9 @@ def send_mail(receiver, link):
         api_key = os.environ.get('SENDGRID_API_KEY')
     else:
         api_key = S3Connection(os.environ['SENDGRID_API_KEY'])
+        s3 = S3Connection(os.environ['SENDGRID_API_KEY'])
+        flash(api_key)
+
 
     sender = "no-reply@vidveda.com"
     message = Mail(
@@ -24,7 +28,8 @@ def send_mail(receiver, link):
     try:
         sg = SendGridAPIClient(api_key)
         response = sg.send(message)
-        flash('Email Sent')
+        flash(api_key)
+        #flash('Email Sent')
         return redirect('/forgot')
         print(response.status_code)
         print(response.body)
