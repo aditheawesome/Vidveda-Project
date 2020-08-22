@@ -25,6 +25,8 @@ delta = timedelta(
     weeks=1
 )
 
+
+
 app = Flask(__name__)
 
 hi786 = uuid.uuid1()
@@ -35,7 +37,7 @@ login_manager.init_app(app)
 login_manager.login_view = '/login'
 
 
-env = 'pro'
+env = 'dev'
 
 if (env=='dev'):
     app.debug=True
@@ -86,10 +88,10 @@ class UserRoles(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     user_id = db.Column(db.Integer(), db.ForeignKey('users.id', ondelete='CASCADE'))
     role_id = db.Column(db.Integer(), db.ForeignKey('roles.id', ondelete='CASCADE'))
-
+'''
 db.create_all()
 db.session.commit()
-
+'''
 
 
 
@@ -301,16 +303,16 @@ def index():
                 return redirect('/symptomcheck')
                 
         elif 'reset' in request.form:
-            weee = request.form['sss']
-            reeer = User.query.filter_by(username = weee).first()
-            if reeer:
-                reeer.secret_code = str(uuid.uuid4())
+            email_add = request.form['sss']
+            db_user = User.query.filter_by(username = email_add).first()
+            if db_user:
+                db_user.secret_code = str(uuid.uuid4())
                 db.session.commit()
-                yeeee = reeer.secret_code
+                yeeee = db_user.secret_code
                 link = "vidveda.com/pwdreset/" + yeeee
-                send_mail(weee, link)
+                send_mail(email_add, link)
+                return redirect('/forgot')
             else:
-                flash("Invalid email")
                 return redirect('/forgot')
 
         elif 'docsubmit2' in request.form:
