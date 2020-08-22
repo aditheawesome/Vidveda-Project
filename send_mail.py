@@ -6,7 +6,7 @@ from flask import Flask, render_template, url_for, request, redirect, flash
 
 
 
-env = "pro"
+env = "dev"
 
 def send_mail(receiver, link):
     
