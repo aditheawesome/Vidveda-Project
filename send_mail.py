@@ -11,14 +11,7 @@ env = "dev"
 def send_mail(receiver, link):
     
 
-    if env == "dev" :
-        api_key = os.environ.get('SENDGRID_API_KEY')
-    else:
-        api_key = S3Connection(os.environ['SENDGRID_API_KEY'])
-        s3 = S3Connection(os.environ['SENDGRID_API_KEY'])
-        flash(api_key)
-
-
+    api_key = os.environ.get('SENDGRID_API_KEY')
     sender = "no-reply@vidveda.com"
     message = Mail(
         from_email=(sender,"VID VEDA") ,
@@ -28,8 +21,7 @@ def send_mail(receiver, link):
     try:
         sg = SendGridAPIClient(api_key)
         response = sg.send(message)
-        flash(api_key)
-        #flash('Email Sent')
+        flash('Email Sent')
         return redirect('/forgot')
         print(response.status_code)
         print(response.body)
