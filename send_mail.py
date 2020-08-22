@@ -5,11 +5,11 @@ from boto.s3.connection import S3Connection
 from flask import Flask, render_template, url_for, request, redirect, flash
 
 
-
-env = "dev"
+env = "pro"
 
 def send_mail(receiver, link):
-    env = "dev"
+    
+
     if env == "dev" :
         api_key = os.environ.get('SENDGRID_API_KEY')
     else:
@@ -29,6 +29,7 @@ def send_mail(receiver, link):
         print(response.status_code)
         print(response.body)
         print(response.headers)
+
     except Exception as e:
         flash('Sorry, but the email linked to this account is invalid')
         return redirect('/forgot')
