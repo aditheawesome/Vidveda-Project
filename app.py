@@ -396,12 +396,6 @@ def symptomcheck():
                 from_='+12084233761',
                 to="+" + str(item[r1].phone_number)
             )
-        client2 = Client(account_sid, auth_token)
-        message2 = client.messages.create(
-            body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdv,
-            from_='whatsapp:+12084233761',
-            to="whatsapp:" + "+" + str(item[r1].phone_number) 
-        )
         return redirect('/vidcall/' + str(hi786) )
     else:
         return render_template('symptomchecker.html')
