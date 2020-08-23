@@ -6,6 +6,7 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 import googlemaps
 import requests
+from boto.s3.connection import S3Connection
 import json
 import time
 from uszipcode import SearchEngine
@@ -94,9 +95,9 @@ db.session.commit()
 '''
 
 
-
-
-
+account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
+auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
+        
 
 @app.route('/.well-known/acme-challenge/JDMqizXXpBvEaMoC87xpHy-XphwxO8sz72KNzartHes')
 def ssl():
@@ -388,8 +389,6 @@ def symptomcheck():
         item = User.query.filter_by(checkin = True).all()            
         tttttt = int(len(item)) - 1
         r1 = random.randint(0, tttttt)
-        account_sid = 'AC1d3bc69c76aeefb1c5a7f3ab83d95a8b'
-        auth_token = '90ca4aa26d68ca112d933bca87c01be0'
         client = Client(account_sid, auth_token)
         message = client.messages \
             .create(
@@ -397,6 +396,12 @@ def symptomcheck():
                 from_='+12084233761',
                 to="+" + str(item[r1].phone_number)
             )
+        client2 = Client(account_sid, auth_token)
+        message2 = client.messages.create(
+            body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdv,
+            from_='whatsapp:+12084233761',
+            to="whatsapp:" + "+" + str(item[r1].phone_number) 
+        )
         return redirect('/vidcall/' + str(hi786) )
     else:
         return render_template('symptomchecker.html')
