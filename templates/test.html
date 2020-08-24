@@ -18,7 +18,7 @@
             
 
         <tr>
-            <a style = "color: black"> Dr. {{ x.first_name }} {{ x.last_name }} </a> <button name = "doc_request{{x.id}}">x</button>
+            <a style = "color: black"> Dr. {{ x.first_name }} {{ x.last_name }} </a> <form action = '/requestdoc{{x.id}}' method = "POST"><button name = "requestdoc">x</button></form>
         </tr>
         </table>
 {% endfor %}
