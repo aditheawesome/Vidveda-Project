@@ -151,6 +151,7 @@ def checkin():
 def status():
     return render_template("checkin2.html")
 @app.route('/test')
+@login_required
 def test():
     weeee = User.query.filter_by(checkin = True).all()
     return render_template('test.html', test = weeee)
@@ -362,12 +363,13 @@ def plz(hi787):
     hi787 = hi787
     return render_template('hope.html', plz = hi787)
 @app.route('/requestdoc/<id2>', methods = ['POST','GET'])
+@login_required
 def requestdoc(id2):
     if request.method == "POST":
         if 'requestdoc' in request.form:
             return render_template('symptomchecker2.html', he = id2)
         if 'symptom_submit2' in request.form:
-            bsdvsdv = request.form['symptom_check']
+            bsdvsdv = request.form['symptom_check2']
             otheritem = User.query.filter_by(id = id2).first()
             client = Client(account_sid, auth_token)
             message = client.messages \
@@ -403,14 +405,14 @@ def pwd(hq):
 @login_required
 def symptomcheck():
     if request.method == 'POST':
-        bsdvsdv = request.form['symptom_check']
+        bsdvsdvd = request.form['symptom_check']
         item = User.query.filter_by(checkin = True).all()            
         tttttt = int(len(item)) - 1
         r1 = random.randint(0, tttttt)
         client = Client(account_sid, auth_token)
         message = client.messages \
             .create(
-                body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdv,
+                body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdvd,
                 from_='+12084233761',
                 to="+" + str(item[r1].phone_number)
             )
