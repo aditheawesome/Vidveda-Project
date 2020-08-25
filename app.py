@@ -192,6 +192,8 @@ def index():
             else:
                 flash("Invalid username or password")
                 return redirect('/login')
+        if 'choosedoc' in request.form:
+            return redirect('/test')
         if 'signup' in request.form:
             return redirect('/signup')
         if 'logout' in request.form:
