@@ -366,6 +366,17 @@ def requestdoc(id2):
     if request.method == "POST":
         if 'requestdoc' in request.form:
             return render_template('symptomchecker2.html', he = id2)
+        if 'symptom_submit2' in request.form:
+            bsdvsdv = request.form['symptom_check']
+            otheritem = User.query.filter_by(id = id2).first()
+            client = Client(account_sid, auth_token)
+            message = client.messages \
+                .create(
+                    body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdv,
+                    from_='+12084233761',
+                    to="+" + str(otheritem.phone_number)
+                )
+        return redirect('/vidcall/' + str(hi786) )
 @app.route('/forgot')
 def forgot():
     return render_template('forgot.html')
