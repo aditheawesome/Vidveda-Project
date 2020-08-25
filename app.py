@@ -365,7 +365,7 @@ def plz(hi787):
 def requestdoc(id2):
     if request.method == "POST":
         if 'requestdoc' in request.form:
-            return render_template('symptomchecker2.html')
+            return render_template('symptomchecker2.html', he = id2)
 @app.route('/forgot')
 def forgot():
     return render_template('forgot.html')
