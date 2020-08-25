@@ -359,6 +359,11 @@ def logout():
 def plz(hi787):
     hi787 = hi787
     return render_template('hope.html', plz = hi787)
+@app.route('requestdoc/<id2>', methods = ['POST','GET'])
+def requestdoc(id2):
+    if request.method == "POST":
+        if 'requestdoc' in request.form:
+            return render_template('symptomchecker2.html')
 @app.route('/forgot')
 def forgot():
     return render_template('forgot.html')
