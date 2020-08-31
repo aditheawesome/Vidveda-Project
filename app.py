@@ -5,6 +5,7 @@ from datetime import datetime
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 import googlemaps
+import math
 import requests
 from boto.s3.connection import S3Connection
 import json
