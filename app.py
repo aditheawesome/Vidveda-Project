@@ -74,6 +74,7 @@ class User(db.Model, UserMixin):
     checkin = db.Column(db.Boolean)
     phone_number = db.Column(db.String, nullable=True)
     callstatus = db.Column(db.Boolean)
+    verification = db.Column(db.Boolean)
         # Relationships
     roles = db.relationship('Role', secondary='user_roles')
     secret_code = db.Column(db.String)
