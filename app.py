@@ -53,7 +53,7 @@ else:
     app.debug = False
     database_key = os.environ.get('DATABASE_URL')
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'database_key'
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_key
 
     @app.before_request
     def before_request():
