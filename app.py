@@ -51,9 +51,7 @@ if env == 'dev':
 
 else:
     app.debug = False
-    database_key = os.environ.get('DATABASE_URL')
-
-    app.config['SQLALCHEMY_DATABASE_URI'] = database_key
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bvipgytqmvgyiq:7b6c0f324808e528c01d5e2351c52834e94cdb8fc92cdd3e268a0977a8ca2d84@ec2-54-235-192-146.compute-1.amazonaws.com:5432/dfmrk83fdrmlua'
 
     @app.before_request
     def before_request():
