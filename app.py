@@ -261,8 +261,7 @@ def index():
                 if uaa == uuu:
                     hashword = generate_password_hash(uaa, method='sha256')
                     admin_role = Role(name='Patient')
-                    new_user = User(username=uee, password=hashword, first_name=haa,
-                                    middle_name=huu, last_name=hee, checkin=False)
+                    new_user = User(username=uee, password=hashword, first_name=haa, middle_name=huu, last_name=hee, checkin=False)
                     new_user.roles.append(admin_role)
                     db.session.add(new_user)
                     db.session.commit()
@@ -376,8 +375,7 @@ def index():
                     if aaa == auu:
                         hshword = generate_password_hash(aaa, method='sha256')
                         bdmin_role = Role(name='Doctor')
-                        wew_user = User(username=aee, password=hshword, checkin=False, first_name=yuu,
-                                        middle_name=yaa, last_name=yee, phone_number=yii, callstatus=False)
+                        wew_user = User(username=aee, password=hshword, checkin=False, first_name=yuu, middle_name=yaa, last_name=yee, phone_number=yii, callstatus=False)
                         wew_user.roles.append(bdmin_role)
                         db.session.add(wew_user)
                         db.session.commit()
@@ -419,8 +417,7 @@ def requestdoc(id2):
             client = Client(account_sid, auth_token)
             message = client.messages \
                 .create(
-                    body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(
-                        current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdv,
+                    body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdv,
                     from_='+12084233761',
                     to="+" + str(otheritem.phone_number)
                 )
@@ -464,8 +461,7 @@ def symptomcheck():
         client = Client(account_sid, auth_token)
         message = client.messages \
             .create(
-                body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(
-                    current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdvd,
+                body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdvd,
                 from_='+12084233761',
                 to="+" + str(item[r1].phone_number)
             )
