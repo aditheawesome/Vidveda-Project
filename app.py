@@ -39,9 +39,9 @@ login_manager.init_app(app)
 login_manager.login_view = '/login'
 
 
-env = 'pro'
+env = 'dev'
 
-if (env == 'dev'):
+if env == 'dev':
     app.debug = True
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
