@@ -317,7 +317,7 @@ def index():
 
         elif 'reset' in request.form:
             flash(
-                "Sorry, forgot password is unavaliable, please email us at noreply.vidveda@hotspotsnearu.com")
+                "Sorry, forgot password is unavaliable, please email us at emailaccount")
             return redirect('/forgot')
             """
             weee = request.form['sss']
@@ -331,7 +331,7 @@ def index():
                     smtp_server = "smtp.hotspotsnearu.com"
                     sender_email = "noreply.vidveda@hotspotsnearu.com"
                     receiver_email = weee
-                    password = "aditya121207"
+                    password = "e"
                     messager = ""\
                     
                     Forgot Password
@@ -442,7 +442,8 @@ def symptomcheck():
                         return redirect('/symptomcheck')
                 aefdsv.append(bsdvsdv)
             return redirect('/symptomcheck')
-        elif 'submit2' in request.form:
+        elif 'symptom_submit' in request.form:
+            aefdsv = request.form['symptom_check']
             item = User.query.filter_by(checkin=True).all()
             tttttt = int(len(item)) - 1
             r1 = random.randint(0, tttttt)
@@ -452,7 +453,7 @@ def symptomcheck():
             message = client.messages \
                 .create(
                     body='The link is: vidveda.com/vidcall/' +
-                    str(hi786) + ", and the symptoms are " + " ".join(aefdsv),
+                    str(hi786) + ", and the symptoms are " + str(aefdsv),
                     from_='+12084233761',
                     to="+" + str(item[r1].phone_number)
                 )
