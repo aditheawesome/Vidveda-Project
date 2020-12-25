@@ -7,6 +7,7 @@ import requests
 import json
 import time
 from uszipcode import SearchEngine
+from send_mail import send_mail
 from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
 from email.mime.text import MIMEText
@@ -316,17 +317,24 @@ def index():
                 return redirect('/symptomcheck')
 
         elif 'reset' in request.form:
+            
+            '''
             flash(
                 "Sorry, forgot password is unavaliable, please email us at emailaccount")
             return redirect('/forgot')
-            """
+            '''
             weee = request.form['sss']
             reeer = User.query.filter_by(username = weee).first()
             if reeer:
                 reeer.secret_code = str(uuid.uuid4())
                 db.session.commit()
                 yeeee = reeer.secret_code
+                mail_to_send = 'www.vidveda.com/' + str(yeeee)
                 try:
+                    send_mail(reeer.first_name, mail_to_send)
+                    flash("Message Sent")
+                    return redirect('/forgot')
+                    '''
                     port = 465  # For starttls
                     smtp_server = "smtp.hotspotsnearu.com"
                     sender_email = "noreply.vidveda@hotspotsnearu.com"
@@ -345,13 +353,14 @@ def index():
                         server.sendmail(sender_email, receiver_email, messager)
                         flash("Message Sent")
                         return redirect('/forgot')
+                        '''
                 except:
                     flash("Sorry, the account might linked with an invalid email, you may have to create another account.")
                     return redirect('/forgot')
             else:
                 flash("Invalid email")
                 return redirect('/forgot')
-                """
+                
         elif 'docsubmit2' in request.form:
             aee = request.form['content9']
             aaa = request.form['content6']
