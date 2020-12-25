@@ -2,12 +2,8 @@ from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from datetime import datetime
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
 import googlemaps
-import math
 import requests
-from boto.s3.connection import S3Connection
 import json
 import time
 from uszipcode import SearchEngine
@@ -18,7 +14,6 @@ from email.mime.multipart import MIMEMultipart
 import random
 from twilio.rest import Client
 import os
-from send_mail import send_mail
 from datetime import timedelta
 from flask_mail import Mail, Message
 import smtplib
@@ -27,7 +22,6 @@ aefdsv = []
 delta = timedelta(
     weeks=1
 )
-
 
 app = Flask(__name__)
 
@@ -41,17 +35,13 @@ login_manager.login_view = '/login'
 
 env = 'pro'
 
-if env == 'dev':
+if (env == 'dev'):
     app.debug = True
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-    #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-    #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bvipgytqmvgyiq:7b6c0f324808e528c01d5e2351c52834e94cdb8fc92cdd3e268a0977a8ca2d84@ec2-54-235-192-146.compute-1.amazonaws.com:5432/dfmrk83fdrmlua'
-
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:admin@localhost/data'
 else:
-    app.debug = False
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bvipgytqmvgyiq:7b6c0f324808e528c01d5e2351c52834e94cdb8fc92cdd3e268a0977a8ca2d84@ec2-54-235-192-146.compute-1.amazonaws.com:5432/dfmrk83fdrmlua'
+    app.debug = False
 
     @app.before_request
     def before_request():
@@ -77,7 +67,6 @@ class User(db.Model, UserMixin):
     checkin = db.Column(db.Boolean)
     phone_number = db.Column(db.String, nullable=True)
     callstatus = db.Column(db.Boolean)
-    verification = db.Column(db.Boolean)
     # Relationships
     roles = db.relationship('Role', secondary='user_roles')
     secret_code = db.Column(db.String)
@@ -102,14 +91,8 @@ class UserRoles(db.Model):
         'roles.id', ondelete='CASCADE'))
 
 
-'''
 db.create_all()
 db.session.commit()
-'''
-
-
-account_sid = os.environ.get('TWILIO_ACCOUNT_SID')
-auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
 
 
 @app.route('/.well-known/acme-challenge/JDMqizXXpBvEaMoC87xpHy-XphwxO8sz72KNzartHes')
@@ -130,11 +113,6 @@ def f():
 @app.route('/aboutus')
 def aboutus():
     return render_template('updated_aboutus.html')
-
-
-@app.route('/webinar')
-def webinar():
-    return render_template('webinar.html')
 
 
 @app.route('/help')
@@ -184,13 +162,6 @@ def status():
     return render_template("checkin2.html")
 
 
-@app.route('/test')
-@login_required
-def test():
-    weeee = User.query.filter_by(checkin=True).all()
-    return render_template('test.html', test=weeee)
-
-
 @app.route('/no')
 def ni():
     return('ifg')
@@ -204,7 +175,7 @@ def checkin2(hi):
         u.secret_code = None
         db.session.commit()
         flash("Checked Out")
-        return redirect('/logout')
+        return redirect('/checkin')
     else:
         y = User.query.filter_by(secret_code=hi).first()
         return render_template('checko.html', hi=y.first_name, bye=hi)
@@ -233,8 +204,6 @@ def index():
             else:
                 flash("Invalid username or password")
                 return redirect('/login')
-        if 'choosedoc' in request.form:
-            return redirect('/test')
         if 'signup' in request.form:
             return redirect('/signup')
         if 'logout' in request.form:
@@ -269,7 +238,7 @@ def index():
                     db.session.add(new_user)
                     db.session.commit()
                     flash('You were succesfully signed up')
-                    return redirect('/login')
+                    return redirect('/signup')
                 else:
                     flash("Passwords don't match")
                     return redirect('/signup')
@@ -327,7 +296,6 @@ def index():
                         waa = str(uuid.uuid4())
                         ser.secret_code = waa
                         db.session.commit()
-                        login_user(ser, remember=True)
                         return redirect('/checkin2/' + str(ser.secret_code))
                     else:
                         flash("Account not a doctor")
@@ -348,18 +316,42 @@ def index():
                 return redirect('/symptomcheck')
 
         elif 'reset' in request.form:
-            email_add = request.form['sss']
-            db_user = User.query.filter_by(username=email_add).first()
-            if db_user:
-                db_user.secret_code = str(uuid.uuid4())
+            flash(
+                "Sorry, forgot password is unavaliable, please email us at noreply.vidveda@hotspotsnearu.com")
+            return redirect('/forgot')
+            """
+            weee = request.form['sss']
+            reeer = User.query.filter_by(username = weee).first()
+            if reeer:
+                reeer.secret_code = str(uuid.uuid4())
                 db.session.commit()
-                yeeee = db_user.secret_code
-                link = "vidveda.com/pwdreset/" + yeeee
-                send_mail(email_add, link)
-                return redirect('/forgot')
+                yeeee = reeer.secret_code
+                try:
+                    port = 465  # For starttls
+                    smtp_server = "smtp.hotspotsnearu.com"
+                    sender_email = "noreply.vidveda@hotspotsnearu.com"
+                    receiver_email = weee
+                    password = "aditya121207"
+                    messager = ""\
+                    
+                    Forgot Password
+                    Go to vidveda.com/pwdreset/"" + str(yeeee) + " to reset your password."
+                    context = ssl.create_default_context()
+                    with smtplib.SMTP(smtp_server, port) as server:
+                        server.ehlo()  # Can be omitted
+                        server.starttls(context=context)
+                        server.ehlo()  # Can be omitted
+                        server.login(sender_email, password)
+                        server.sendmail(sender_email, receiver_email, messager)
+                        flash("Message Sent")
+                        return redirect('/forgot')
+                except:
+                    flash("Sorry, the account might linked with an invalid email, you may have to create another account.")
+                    return redirect('/forgot')
             else:
+                flash("Invalid email")
                 return redirect('/forgot')
-
+                """
         elif 'docsubmit2' in request.form:
             aee = request.form['content9']
             aaa = request.form['content6']
@@ -384,7 +376,7 @@ def index():
                         db.session.add(wew_user)
                         db.session.commit()
                         flash('You were succesfully signed up')
-                        return redirect('/checkin')
+                        return redirect('/dctrsignup')
                     else:
                         flash("Passwords don't match")
                         return redirect('/dctrsignup')
@@ -407,26 +399,6 @@ def logout():
 def plz(hi787):
     hi787 = hi787
     return render_template('hope.html', plz=hi787)
-
-
-@app.route('/requestdoc/<id2>', methods=['POST', 'GET'])
-@login_required
-def requestdoc(id2):
-    if request.method == "POST":
-        if 'requestdoc' in request.form:
-            return render_template('symptomchecker2.html', he=id2)
-        if 'symptom_submit2' in request.form:
-            bsdvsdv = request.form['symptom_check2']
-            otheritem = User.query.filter_by(id=id2).first()
-            client = Client(account_sid, auth_token)
-            message = client.messages \
-                .create(
-                    body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(
-                        current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdv,
-                    from_='+12084233761',
-                    to="+" + str(otheritem.phone_number)
-                )
-        return redirect('/vidcall/' + str(hi786))
 
 
 @app.route('/forgot')
@@ -459,21 +431,46 @@ def pwd(hq):
 @login_required
 def symptomcheck():
     if request.method == 'POST':
-        bsdvsdvd = request.form['symptom_check']
-        item = User.query.filter_by(checkin=True).all()
-        tttttt = int(len(item)) - 1
-        r1 = random.randint(0, tttttt)
-        client = Client(account_sid, auth_token)
-        message = client.messages \
-            .create(
-                body='The link is: vidveda.com/vidcall/' + str(hi786) + ", the patients name is " + str(
-                    current_user.first_name) + " " + str(current_user.last_name) + ", and the symptoms are " + bsdvsdvd,
-                from_='+12084233761',
-                to="+" + str(item[r1].phone_number)
-            )
-        return redirect('/vidcall/' + str(hi786))
+        if 'submit' in request.form:
+            bsdvsdv = request.form['form']
+            if len(aefdsv) == 20:
+                flash('Sorry, the max limit is 20')
+            else:
+                for re in range(0, len(aefdsv)):
+                    if aefdsv[re] == bsdvsdv:
+                        flash("Symptom Repeated")
+                        return redirect('/symptomcheck')
+                aefdsv.append(bsdvsdv)
+            return redirect('/symptomcheck')
+        elif 'submit2' in request.form:
+            item = User.query.filter_by(checkin=True).all()
+            tttttt = int(len(item)) - 1
+            r1 = random.randint(0, tttttt)
+            account_sid = 'AC1d3bc69c76aeefb1c5a7f3ab83d95a8b'
+            auth_token = '90ca4aa26d68ca112d933bca87c01be0'
+            client = Client(account_sid, auth_token)
+            message = client.messages \
+                .create(
+                    body='The link is: vidveda.com/vidcall/' +
+                    str(hi786) + ", and the symptoms are " + " ".join(aefdsv),
+                    from_='+12084233761',
+                    to="+" + str(item[r1].phone_number)
+                )
+            return redirect('/vidcall/' + str(hi786))
+        elif 'submit1' in request.form:
+            aefdsv.clear()
+            return redirect('/symptomcheck')
     else:
-        return render_template('symptomchecker.html')
+        return render_template('symptomchecker.html', name=aefdsv)
+
+
+@app.route('/symptomchecker/<ide>', methods=["POST", "GET"])
+@login_required
+def hire(ide):
+    ide = ide
+    if 'checker' + ide in request.form:
+        del aefdsv[int(ide)]
+        return redirect('/symptomcheck')
 
 
 @app.route('/signup')
@@ -481,5 +478,13 @@ def signup():
     return render_template('signup.html')
 
 
-if __name__ == '__main__':
-    app.run()
+if (env == 'dev'):
+    if __name__ == '__main__':
+        app.run(ssl_context='adhoc')
+
+else :
+    if __name__ == '__main__':
+        app.run()
+
+
+
