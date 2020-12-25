@@ -332,8 +332,6 @@ def index():
                 mail_to_send = 'www.vidveda.com/' + str(yeeee)
                 try:
                     send_mail(reeer.first_name, mail_to_send)
-                    flash("Message Sent")
-                    return redirect('/forgot')
                     '''
                     port = 465  # For starttls
                     smtp_server = "smtp.hotspotsnearu.com"
