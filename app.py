@@ -462,7 +462,7 @@ def symptomcheck():
             aefdsv.clear()
             return redirect('/symptomcheck')
     else:
-        return render_template('symptomchecker.html', name=aefdsv)
+        return render_template('symptomchecker.html')
 
 
 @app.route('/symptomchecker/<ide>', methods=["POST", "GET"])
