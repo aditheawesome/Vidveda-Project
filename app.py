@@ -329,7 +329,7 @@ def index():
                 reeer.secret_code = str(uuid.uuid4())
                 db.session.commit()
                 yeeee = reeer.secret_code
-                mail_to_send = 'www.vidveda.com/' + str(yeeee)
+                mail_to_send = 'www.vidveda.com/pwdreset/' + str(yeeee)
                 try:
                     send_mail(weee, mail_to_send, reeer.first_name)
                     flash("Email Sent")
@@ -461,7 +461,6 @@ def symptomcheck():
             client = Client(account_sid, auth_token)
             message = client.messages \
                 .create(
-                    body='The link is: vidveda.com/vidcall/' +
                     str(hi786) + ", and the symptoms are " + str(aefdsv),
                     from_='+12084233761',
                     to="+" + str(item[r1].phone_number)
