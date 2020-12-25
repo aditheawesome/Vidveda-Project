@@ -8,7 +8,7 @@ from flask import Flask, render_template, url_for, request, redirect, flash
 
 env = "dev"
 
-def send_mail(receiver, link):
+def send_mail(receiver, link, name):
     
 
     api_key = os.environ.get('SENDGRID_API_KEY')
@@ -17,7 +17,7 @@ def send_mail(receiver, link):
         from_email=(sender,"VID VEDA") ,
         to_emails=receiver,
         subject='TEST MAIL',
-        html_content=f'<strong>Hi {receiver}! The link is {link} </strong>')
+        html_content=f'<strong>Hi {name}! The link is {link} </strong>')
     try:
         sg = SendGridAPIClient(api_key)
         response = sg.send(message)
