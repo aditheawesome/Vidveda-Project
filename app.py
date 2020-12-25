@@ -331,7 +331,7 @@ def index():
                 yeeee = reeer.secret_code
                 mail_to_send = 'www.vidveda.com/' + str(yeeee)
                 try:
-                    send_mail(weee, mail_to_send, weee)
+                    send_mail(weee, mail_to_send, reeer.first_name)
                     '''
                     port = 465  # For starttls
                     smtp_server = "smtp.hotspotsnearu.com"
