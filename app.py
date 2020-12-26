@@ -461,7 +461,7 @@ def symptomcheck():
             client = Client(account_sid, auth_token)
             message = client.messages \
                 .create(
-                    str(hi786) + ", and the symptoms are " + str(aefdsv),
+                    str(hi786) + ", the symptoms are " + str(aefdsv) " , and the email of the user is" + current_user.username,
                     from_='+12084233761',
                     to="+" + str(item[r1].phone_number)
                 )
