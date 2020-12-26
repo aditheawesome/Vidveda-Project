@@ -11,7 +11,7 @@ env = "dev"
 def send_mail(receiver, link, name):
     
 
-    api_key = os.environ.get('SENDGRID_API_KEY')
+    api_key = os.environ.get('Forgot Password')
     sender = "no-reply@vidveda.com"
     message = Mail(
         from_email=(sender,"VID VEDA") ,
