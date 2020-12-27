@@ -69,7 +69,13 @@
         
     </div>
     {% endfor %}
-
+        <script>
+            const btn = document.querySelector(".msgbtn")
+            btn.addEventListener("click", () => {
+                const msgbox = document.querySelector(".MsgPopArea")
+                msgbox.classList.toggle("msgdisplay")
+            })
+         </script>
     </main>
 
 {% endblock content %}
