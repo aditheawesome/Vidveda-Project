@@ -452,19 +452,6 @@ def symptomcheck():
                 aefdsv.append(bsdvsdv)
             return redirect('/symptomcheck')
         elif 'symptom_submit' in request.form:
-            aefdsv = request.form['symptom_check']
-            item = User.query.filter_by(checkin=True).all()
-            tttttt = int(len(item)) - 1
-            r1 = random.randint(0, tttttt)
-            account_sid = 'AC1d3bc69c76aeefb1c5a7f3ab83d95a8b'
-            auth_token = '90ca4aa26d68ca112d933bca87c01be0'
-            client = Client(account_sid, auth_token)
-            message = client.messages \
-                .create(
-                    str(hi786) + ", the symptoms are " + str(aefdsv) ,
-                    from_='+12084233761',
-                    to="+" + str(item[r1].phone_number)
-                )
             return redirect('/vidcall/' + str(hi786))
         elif 'submit1' in request.form:
             aefdsv.clear()
