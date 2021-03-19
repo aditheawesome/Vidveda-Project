@@ -25,13 +25,34 @@
                 <button style = "margin-top: 50px" class="btn" type="submit" name = reset ><p class="sign">Submit</p></button>
             </div></form>
 
-            <div class="cntr3">
+            {% for message in get_flashed_messages() %}
 
-                {% for message in get_flashed_messages() %}
-                    <p>{{ message }}</p>
-                {% endfor %}
+            <div class="MsgPopArea">
+                <div class="msgarea">
+                    <p>{{ message }} </p>
 
+                </div>
+                <div class="btnarea">
+                    <button class="msgbtn"> Ok </button>
+
+                </div>
+                
             </div>
+            {% endfor %}
+
+        </form>
+
+        </div>
+
+
+        <script>
+            const btn = document.querySelector(".msgbtn")
+            btn.addEventListener("click", () => {
+                const msgbox = document.querySelector(".MsgPopArea")
+                msgbox.classList.toggle("msgdisplay")
+            })
+        </script>
+        
 
         </div>
       

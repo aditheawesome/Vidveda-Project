@@ -7,6 +7,7 @@ import requests
 import json
 import time
 from uszipcode import SearchEngine
+from send_mail import send_mail
 from werkzeug.security import generate_password_hash, check_password_hash
 import uuid
 from email.mime.text import MIMEText
@@ -336,23 +337,30 @@ def index():
                 return redirect('/symptomcheck')
 
         elif 'reset' in request.form:
+            
+            '''
             flash(
-                "Sorry, forgot password is unavaliable, please email us at noreply.vidveda@hotspotsnearu.com")
+                "Sorry, forgot password is unavaliable, please email us at emailaccount")
             return redirect('/forgot')
-            """
+            '''
             weee = request.form['sss']
             reeer = User.query.filter_by(username = weee).first()
             if reeer:
                 reeer.secret_code = str(uuid.uuid4())
                 db.session.commit()
                 yeeee = reeer.secret_code
+                mail_to_send = 'www.vidveda.com/pwdreset/' + str(yeeee)
                 try:
+                    send_mail(weee, mail_to_send, reeer.first_name)
+                    flash("Email Sent")
+                    return redirect('/forgot')
+                    '''
                     port = 465  # For starttls
                     smtp_server = "smtp.hotspotsnearu.com"
                     sender_email = "noreply.vidveda@hotspotsnearu.com"
                     receiver_email = weee
-                    password = "aditya121207"
-                    messager = ""
+                    password = "e"
+                    messager = ""\
                     
                     Forgot Password
                     Go to vidveda.com/pwdreset/"" + str(yeeee) + " to reset your password."
@@ -365,13 +373,14 @@ def index():
                         server.sendmail(sender_email, receiver_email, messager)
                         flash("Message Sent")
                         return redirect('/forgot')
+                        '''
                 except:
                     flash("Sorry, the account might linked with an invalid email, you may have to create another account.")
                     return redirect('/forgot')
             else:
                 flash("Invalid email")
                 return redirect('/forgot')
-                """
+                
         elif 'docsubmit2' in request.form:
             aee = request.form['content9']
             aaa = request.form['content6']
@@ -462,26 +471,13 @@ def symptomcheck():
                         return redirect('/symptomcheck')
                 aefdsv.append(bsdvsdv)
             return redirect('/symptomcheck')
-        elif 'submit2' in request.form:
-            item = User.query.filter_by(checkin=True).all()
-            tttttt = int(len(item)) - 1
-            r1 = random.randint(0, tttttt)
-            account_sid = 'AC1d3bc69c76aeefb1c5a7f3ab83d95a8b'
-            auth_token = '90ca4aa26d68ca112d933bca87c01be0'
-            client = Client(account_sid, auth_token)
-            message = client.messages \
-                .create(
-                    body='The link is: vidveda.com/vidcall/' +
-                    str(hi786) + ", and the symptoms are " + " ".join(aefdsv),
-                    from_='+12084233761',
-                    to="+" + str(item[r1].phone_number)
-                )
+        elif 'symptom_submit' in request.form:
             return redirect('/vidcall/' + str(hi786))
         elif 'submit1' in request.form:
             aefdsv.clear()
             return redirect('/symptomcheck')
     else:
-        return render_template('symptomchecker.html', name=aefdsv)
+        return render_template('symptomchecker.html')
 
 
 @app.route('/symptomchecker/<ide>', methods=["POST", "GET"])
