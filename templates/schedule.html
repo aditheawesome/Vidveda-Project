@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+<title>VID VEDA | Schedule Appointment </title>
+
+{% endblock %}
+
+
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/help_page.css') }}">
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+
+<main>
+    <div class="cover">
+        <div class="covertext">
+            <h1>Schedule Appointment</h1>
+            <h3> Please drop in your details and we'll get back to you shortly</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="formarea">
+            <div class="formheading">
+                <h1>Please provide your Details</h1>
+                <div class="svglogo">
+                    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8.66671 8.66666H43.3334C45.7167 8.66666 47.6667 10.6167 47.6667 13V39C47.6667 41.3833 45.7167 43.3333 43.3334 43.3333H8.66671C6.28337 43.3333 4.33337 41.3833 4.33337 39V13C4.33337 10.6167 6.28337 8.66666 8.66671 8.66666Z"
+                            stroke="#0D704F" stroke-width="4.33333" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M47.6667 13L26 28.1667L4.33337 13" stroke="#0D704F" stroke-width="4.33333"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                </div>
+            </div>
+        <form action="/schedule" method="POST">
+
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="John Doe">
+                <label for="gender">Gender</label>
+                <div class="type">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+                <label for="name">Age</label>
+                <input type="text" name="age" placeholder="Age">
+                <label for="Email">Email</label>
+                <input type="email" name="email" id="email" placeholder="johndoe@email.com">
+                <label for="message">Your Issue</label>
+                <input type="text" name="issue" id="message" placeholder="Describe your issue">
+                <label for="name">Choose Appointment Date</label>
+                <input name="date" type="datetime-local" id="meeting-time">
+                <button type="submit">Submit
+                </button>
+
+
+
+        </form>
+        </div>
+        <div class="informationarea">
+
+            <h2>Or email us at</h2>
+            <p>support@vidveda.com</p>
+
+        </div>
+    </div>
+
+
+    <div class="mobinformationarea">
+        <h2>Or email us at</h2>
+        <p>support@vidveda.com</p>
+    </div>
+
+</main>
+
+
+{% endblock content %}

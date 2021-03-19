@@ -16,6 +16,7 @@ from twilio.rest import Client
 import os
 from datetime import timedelta
 from flask_mail import Mail, Message
+from send_app_mail import send_app_mail
 import smtplib
 import ssl
 aefdsv = []
@@ -37,11 +38,16 @@ env = 'pro'
 
 if (env == 'dev'):
     app.debug = True
-    #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+    # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:admin@localhost/data'
+    app.debug = True
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+
 else:
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bvipgytqmvgyiq:7b6c0f324808e528c01d5e2351c52834e94cdb8fc92cdd3e268a0977a8ca2d84@ec2-54-235-192-146.compute-1.amazonaws.com:5432/dfmrk83fdrmlua'
     app.debug = False
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     @app.before_request
     def before_request():
@@ -91,8 +97,8 @@ class UserRoles(db.Model):
         'roles.id', ondelete='CASCADE'))
 
 
-db.create_all()
-db.session.commit()
+# db.create_all()
+# db.session.commit()
 
 
 @app.route('/.well-known/acme-challenge/JDMqizXXpBvEaMoC87xpHy-XphwxO8sz72KNzartHes')
@@ -118,6 +124,20 @@ def aboutus():
 @app.route('/help')
 def help():
     return render_template('help_page.html')
+
+
+@app.route('/schedule', methods=["POST", "GET"])
+def schedule():
+    if request.method == "POST":
+        name = request.form['name']
+        gender = request.form['gender']
+        age = request.form['age']
+        email = request.form['email']
+        issue = request.form['issue']
+        date = request.form['date']
+        print(name, gender, age, email, issue, date)
+        send_app_mail(name, gender, age, email, issue, date)
+    return render_template('schedule.html', message="message")
 
 
 @app.errorhandler(404)
@@ -332,7 +352,7 @@ def index():
                     sender_email = "noreply.vidveda@hotspotsnearu.com"
                     receiver_email = weee
                     password = "aditya121207"
-                    messager = ""\
+                    messager = ""
                     
                     Forgot Password
                     Go to vidveda.com/pwdreset/"" + str(yeeee) + " to reset your password."
@@ -482,9 +502,6 @@ if (env == 'dev'):
     if __name__ == '__main__':
         app.run(ssl_context='adhoc')
 
-else :
+else:
     if __name__ == '__main__':
         app.run()
-
-
-
