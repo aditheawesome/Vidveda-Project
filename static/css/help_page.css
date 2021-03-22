@@ -1,248 +1,209 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
 
-main{
-    font-family: 'Work Sans', sans-serif;
+main {
+  font-family: "Work Sans", sans-serif;
 }
 
-
-.cover{
-    background-color: #0d704f;
-    background-color: #0d704f;
-    color: white;
+.cover {
+  background-color: #0d704f;
+  background-color: #0d704f;
+  color: white;
 }
 
-.covertext{
-width: 70vw;
-margin: auto;
-margin-top: 40px;
-height: 200px;
-display: flex;
-flex-direction: column;
-justify-content: center;
+.covertext {
+  width: 70vw;
+  margin: auto;
+  margin-top: 40px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.covertext h1{
-    margin-bottom: 15px;
+.covertext h1 {
+  margin-bottom: 15px;
 }
 
-.covertext h3{
-    font-weight: 200;
+.covertext h3 {
+  font-weight: 200;
 }
 
-
-.container{
-    width: 60vw;
-    margin: auto;
-    display: flex;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    min-height: 400px;
-    border: 1px solid #E5E5E5;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    background-color: white;
+.container {
+  width: 60vw;
+  margin: auto;
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  min-height: 400px;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  background-color: white;
 }
 
-
-.formarea{
-    flex: 2;
-    background-color: transparent;
-    padding: 30px;
-
+.formarea {
+  flex: 2;
+  background-color: transparent;
+  padding: 30px;
 }
 
-
-.informationarea{
-    flex:1;
-    background-color: #0d704f;  
-    border-radius: 0 15px 15px 0;
-
-
-
+.informationarea {
+  flex: 1;
+  background-color: #0d704f;
+  border-radius: 0 15px 15px 0;
 }
 
-
-.formheading{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-    color: #0d704f;
-    margin-bottom: 30px;
+.formheading {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #0d704f;
+  margin-bottom: 30px;
 }
 
-
-
-.formheading svg{
-    height: 35px;
+.formheading svg {
+  height: 35px;
 }
 
-
-
-form{
-    display: flex;
-    flex-direction: column;
+.zone {
+  flex-direction: row;
 }
 
-
-form label{
-    font-weight: 600;
-    font-size: 15px;
-    margin-bottom: 15px;
-    color: rgb(109, 109, 109);
+form {
+  display: flex;
+  flex-direction: column;
 }
 
-form input{
-    margin-bottom: 30px;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid rgb(184, 184, 184);
-    padding-bottom: 10px;
-    color: rgb(31, 31, 31);
-    font-weight: 400;
-    font-size: 18px;
-    background-color: none;
+form label {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 15px;
+  color: rgb(109, 109, 109);
 }
 
-form input::placeholder{
-    color: rgb(151, 151, 151);
-    font-size: 14px;
-    font-weight: normal;
+form input {
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(184, 184, 184);
+  padding-bottom: 10px;
+  color: rgb(31, 31, 31);
+  font-weight: 400;
+  font-size: 18px;
+  background-color: none;
 }
 
-
-.formarea form button{
-    outline: none;
-    border: none;
-    width: 120px;
-    cursor: pointer;
-    display: flex;
-    background-color: #0d704f;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: 5px;
-    height: 30px;
-    margin-top: 30px;
-    margin-right: 40px;
-    color: white;
+form input::placeholder {
+  color: rgb(151, 151, 151);
+  font-size: 14px;
+  font-weight: normal;
 }
 
-.formarea form button:hover{
-    opacity: 80%;
+.formarea form button {
+  outline: none;
+  border: none;
+  width: 120px;
+  cursor: pointer;
+  display: flex;
+  background-color: #0d704f;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  height: 30px;
+  margin-top: 30px;
+  margin-right: 40px;
+  color: white;
 }
 
-
-.informationarea{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    text-align: left;
-    color: white;
-    font-weight: 400;
-    padding-left: 30px;
-    
+.formarea form button:hover {
+  opacity: 80%;
 }
 
-.informationarea h2{
-    font-size: 23px;
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom: 20px;
-    color: #ffffff;
+.informationarea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
+  text-align: left;
+  color: white;
+  font-weight: 400;
+  padding-left: 30px;
 }
 
-.informationarea p{
-    color: #dfdfdf;
+.informationarea h2 {
+  font-size: 23px;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
-.informationarea p:hover{
-    color: #ffffff;
-    cursor: pointer;
+.informationarea p {
+  color: #dfdfdf;
 }
 
-
-
-
-
-
-.mobinformationarea{
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    color: white;
-    font-weight: 400;
-    background-color: #0d704f;
-    padding-left: 7vw;
-    width: 100vw;
-    margin: auto;
-    margin-bottom: 40px;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
-    height: 200px;
-    display: none;
+.informationarea p:hover {
+  color: #ffffff;
+  cursor: pointer;
 }
 
-
-
-.mobinformationarea h2{
-    font-size: 23px;
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom: 20px;
-    color: #ffffff;
-
+.mobinformationarea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  color: white;
+  font-weight: 400;
+  background-color: #0d704f;
+  padding-left: 7vw;
+  width: 100vw;
+  margin: auto;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+  height: 200px;
+  display: none;
 }
 
-.mobinformationarea p{
-    color: #dfdfdf;
+.mobinformationarea h2 {
+  font-size: 23px;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
-.mobinformationarea p:hover{
-    color: #ffffff;
-    cursor: pointer;
+.mobinformationarea p {
+  color: #dfdfdf;
 }
 
-
-
-
+.mobinformationarea p:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 786px) {
+  .container {
+    width: 90vw;
+  }
 
+  .informationarea {
+    display: none;
+  }
 
-    .container{
-        width: 90vw;
-    }
+  .covertext {
+    width: 80vw;
+  }
 
-    .informationarea{
-        display: none;
-    }
+  .mobinformationarea {
+    display: flex;
+  }
 
-  
-
-    .covertext{
-        width: 80vw;
-    }
-
-
-
-    .mobinformationarea{
-        display: flex;
-
-    }
-
-
-
-    .form button{
-        background-color: orchid;
-    }
-
-  
+  .form button {
+    background-color: orchid;
+  }
 }
-

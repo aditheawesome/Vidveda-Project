@@ -50,12 +50,13 @@
                 <label for="gender">Gender</label>
                 <div class="type">
                     <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label><br>
+                    <label for="male">Male</label>
                     <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label><br>
+                    <label for="female">Female</label>
                     <input type="radio" id="other" name="gender" value="other">
                     <label for="other">Other</label>
                 </div>
+                
                 <label for="name">Age</label>
                 <input type="text" name="age" placeholder="Age">
                 <label for="Email">Email</label>
@@ -64,6 +65,15 @@
                 <input type="text" name="issue" id="message" placeholder="Describe your issue">
                 <label for="name">Choose Appointment Date</label>
                 <input name="date" type="datetime-local" id="meeting-time">
+
+                <label for="zone">Time Zone</label>
+                <div class="zone">
+                    <input type="radio" id="ist" name="zone" value="ist">
+                    <label for="ist">IST</label>
+                    <input type="radio" id="est" name="zone" value="est">
+                    <label for="est">EST</label>
+                </div>
+
                 <button type="submit">Submit
                 </button>
 

@@ -136,8 +136,9 @@ def schedule():
         email = request.form['email']
         issue = request.form['issue']
         date = request.form['date']
-        print(name, gender, age, email, issue, date)
-        send_app_mail(name, gender, age, email, issue, date)
+        zone = request.form['zone']
+        print(name, gender, age, email, issue, date, zone)
+        send_app_mail(name, gender, age, email, issue, date, zone)
     return render_template('schedule.html', message="message")
 
 
@@ -337,14 +338,14 @@ def index():
                 return redirect('/symptomcheck')
 
         elif 'reset' in request.form:
-            
+
             '''
             flash(
                 "Sorry, forgot password is unavaliable, please email us at emailaccount")
             return redirect('/forgot')
             '''
             weee = request.form['sss']
-            reeer = User.query.filter_by(username = weee).first()
+            reeer = User.query.filter_by(username=weee).first()
             if reeer:
                 reeer.secret_code = str(uuid.uuid4())
                 db.session.commit()
@@ -375,12 +376,13 @@ def index():
                         return redirect('/forgot')
                         '''
                 except:
-                    flash("Sorry, the account might linked with an invalid email, you may have to create another account.")
+                    flash(
+                        "Sorry, the account might linked with an invalid email, you may have to create another account.")
                     return redirect('/forgot')
             else:
                 flash("Invalid email")
                 return redirect('/forgot')
-                
+
         elif 'docsubmit2' in request.form:
             aee = request.form['content9']
             aaa = request.form['content6']
